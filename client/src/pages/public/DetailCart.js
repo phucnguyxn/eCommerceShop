@@ -30,15 +30,15 @@ const DetailCart = ({ location, navigate }) => {
         <div className='w-full'>
             <div className='h-[81px] flex justify-center items-center bg-gray-100'>
                 <div className='w-main'>
-                    <h3 className='font-semibold text-2xl uppercase'>My Cart</h3>
+                    <h3 className='font-semibold text-2xl uppercase'>Giỏ hàng</h3>
                     {/* <Breadcrumb category={location?.pathname?.replace('/', '')?.split('-')?.join(' ')} /> */}
                 </div>
             </div>
             <div className='flex flex-col border w-main mx-auto my-8'>
                 <div className='w-main mx-auto bg-gray-200  font-bold py-3 grid grid-cols-10'>
-                    <span className='col-span-6 w-full text-center'>Products</span>
-                    <span className='col-span-1 w-full text-center'>Quantity</span>
-                    <span className='col-span-3 w-full text-center'>Price</span>
+                    <span className='col-span-6 w-full text-center'>Sản phẩm</span>
+                    <span className='col-span-1 w-full text-center'>Số lượng</span>
+                    <span className='col-span-3 w-full text-center'>Giá</span>
                 </div>
                 {currentCart?.map(el => (
                     <OrderItem

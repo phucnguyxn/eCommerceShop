@@ -36,16 +36,16 @@ const Header = ({ dispatch }) => {
                 <div className='flex flex-col px-6 border-r items-center'>
                     <span className='flex gap-4 items-center'>
                         <RiPhoneFill color='red' />
-                        <span className='font-semibold'>(+1800) 000 8808</span>
+                        <span className='font-semibold'>(+84) 999 6789 79</span>
                     </span>
-                    <span>Mon-Sat 9:00AM - 8:00PM</span>
+                    <span>Thứ 2 - Thứ 7 9:00AM - 8:00PM</span>
                 </div>
                 <div className='flex flex-col items-center px-6 border-r'>
                     <span className='flex gap-4 items-center'>
                         <MdEmail color='red' />
-                        <span className='font-semibold'>SUPPORT@TADATHEMES.COM</span>
+                        <span className='font-semibold'>support@cuahangdientu.com</span>
                     </span>
-                    <span>Online Support 24/7</span>
+                    <span>Hỗ trợ trực tuyến 24/7</span>
                 </div>
                 {current && <Fragment>
                     <div onClick={() => dispatch(showCart())} className='cursor-pointer flex items-center justify-center gap-2 px-6 border-r'>
@@ -59,15 +59,15 @@ const Header = ({ dispatch }) => {
 
                     >
                         <FaUserCircle color='red' />
-                        <span>Profile</span>
+                        <span>Thông tin</span>
                         {isShowOption && <div onClick={e => e.stopPropagation()} className='absolute top-full flex-col flex left-[16px] bg-gray-100 border min-w-[150px] py-2'>
                             <Link className='p-2 w-full hover:bg-sky-100' to={`/${path.MEMBER}/${path.PERSONAL}`}>
-                                Personal
+                                Thông tin cá nhân
                             </Link>
                             {+current.role === 1945 && <Link className='p-2 w-full hover:bg-sky-100' to={`/${path.ADMIN}/${path.DASHBOARD}`}>
-                                Admin workspace
+                                Quản lý admin
                             </Link>}
-                            <span onClick={() => dispatch(logout())} className='p-2 w-full hover:bg-sky-100'>Logout</span>
+                            <span onClick={() => dispatch(logout())} className='p-2 w-full hover:bg-sky-100'>Đăng xuất</span>
                         </div>}
                     </div>
                 </Fragment>}

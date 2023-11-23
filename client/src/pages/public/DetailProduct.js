@@ -348,7 +348,7 @@ const DetailProduct = ({ isQuickView, data, location, dispatch, navigate }) => {
         <>
           <div className="w-main m-auto mt-8">
             <h3 className="text-[20px] font-semibold py-[15px] border-b-2 border-main">
-              OTHER CUSTOMER ALSO LIKED
+              KHÁCH HÀNG CŨNG THÍCH SẢN PHẨM NÀY
             </h3>
             <CustomSlider normal={true} products={relatedProducts} />
           </div>

@@ -84,7 +84,7 @@ const Login = () => {
         <div className='w-screen h-screen relative'>
             {isVerifiedEmail && <div className='absolute top-0 left-0 right-0 bottom-0 bg-overlay z-50 flex flex-col justify-center items-center'>
                 <div className='bg-white w-[500px] rounded-md p-8'>
-                    <h4 className=''>We sent a code to your mail. Please check your mail and enter your code:</h4>
+                    <h4 className=''>Chúng tôi gửi code đến mail cảu bạn.Vui lòng kiểm tra mail:</h4>
                     <input type="text"
                         value={token}
                         onChange={e => setToken(e.target.value)}
@@ -101,7 +101,7 @@ const Login = () => {
             </div>}
             {isForgotPassword && <div className='absolute animate-slide-right top-0 left-0 bottom-0 right-0 bg-white flex flex-col items-center py-8 z-50'>
                 <div className='flex flex-col gap-4'>
-                    <label htmlFor="email">Enter your email:</label>
+                    <label htmlFor="email">Nhập email của bạn:</label>
                     <input
                         type="text"
                         id="email"
@@ -130,7 +130,7 @@ const Login = () => {
             />
             <div className='absolute top-0 bottom-0 left-0 right-1/2 items-center justify-center flex'>
                 <div className='p-8 bg-white flex flex-col items-center rounded-md min-w-[500px]'>
-                    <h1 className='text-[28px] font-semibold text-main mb-8'>{isRegister ? 'Register' : 'Login'}</h1>
+                    <h1 className='text-[28px] font-semibold text-main mb-8'>{isRegister ? 'Đăng kí' : 'Đăng nhập'}</h1>
                     {isRegister && <div className='flex items-center gap-2'>
                         <InputField
                             value={payload.firstname}
@@ -176,20 +176,20 @@ const Login = () => {
                         handleOnClick={handleSubmit}
                         fw
                     >
-                        {isRegister ? 'Register' : 'Login'}
+                        {isRegister ? 'Đăng kí' : 'Đăng nhập'}
                     </Button>
                     <div className='flex items-center justify-between my-2 w-full text-sm'>
-                        {!isRegister && <span onClick={() => setIsForgotPassword(true)} className='text-blue-500 hover:underline cursor-pointer'>Forgot your account?</span>}
+                        {!isRegister && <span onClick={() => setIsForgotPassword(true)} className='text-blue-500 hover:underline cursor-pointer'>Quên mật khẩu?</span>}
                         {!isRegister && <span
                             className='text-blue-500 hover:underline cursor-pointer'
                             onClick={() => setIsRegister(true)}
-                        >Create account</span>}
+                        >Tạo tài khoản</span>}
                         {isRegister && <span
                             className='text-blue-500 hover:underline cursor-pointer w-full text-center'
                             onClick={() => setIsRegister(false)}
-                        >Go login</span>}
+                        >Đến đăng nhập</span>}
                     </div>
-                    <Link className='text-blue-500 text-sm hover:underline cursor-pointer' to={`/${path.HOME}`}>Go home?</Link>
+                    <Link className='text-blue-500 text-sm hover:underline cursor-pointer' to={`/${path.HOME}`}>Đến trang chủ</Link>
                 </div>
             </div>
         </div>
