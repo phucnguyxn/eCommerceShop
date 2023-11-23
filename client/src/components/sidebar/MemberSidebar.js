@@ -86,7 +86,7 @@ const MemberSidebar = () => {
         ))}
         <NavLink to={"/"} className={clsx(notActivedStyle)}>
           <TbArrowForwardUp size={18} />
-          Go home
+          Về trang Chủ
         </NavLink>
       </div>
     </div>

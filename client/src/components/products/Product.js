@@ -38,11 +38,11 @@ const Product = ({
       if (!current)
         return Swal.fire({
           title: "Almost...",
-          text: "Please login first!",
+          text: "Vui lòng Đăng Nhập!",
           icon: "info",
           cancelButtonText: "Not now!",
           showCancelButton: true,
-          confirmButtonText: "Go login page",
+          confirmButtonText: "Đến trang Đăng nhập",
         }).then(async (rs) => {
           if (rs.isConfirmed)
             navigate({
@@ -92,8 +92,7 @@ const Product = ({
         className="w-full border p-[15px] flex flex-col items-center"
         onClick={(e) =>
           navigate(
-            `/${productData?.category?.toLowerCase()}/${productData?._id}/${
-              productData?.title
+            `/${productData?.category?.toLowerCase()}/${productData?._id}/${productData?.title
             }`
           )
         }
@@ -118,19 +117,19 @@ const Product = ({
               {current?.cart?.some(
                 (el) => el.product === productData._id.toString()
               ) ? (
-                <span title="Added to Cart">
+                <span title="Thêm vào giỏ">
                   <SelectOption icon={<BsFillCartCheckFill color="green" />} />
                 </span>
               ) : (
                 <span
-                  title="Add to Cart"
+                  title="Thêm Vào Giỏ"
                   onClick={(e) => handleClickOptions(e, "CART")}
                 >
                   <SelectOption icon={<BsFillCartPlusFill />} />
                 </span>
               )}
               <span
-                title="Add to Wishlist"
+                title="Thêm vào Yêu Thích"
                 onClick={(e) => handleClickOptions(e, "WISHLIST")}
               >
                 <SelectOption

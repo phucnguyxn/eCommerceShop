@@ -28,9 +28,9 @@ const ProductInfomation = ({ totalRatings, ratings, nameProduct, pid, rerender }
     const handleVoteNow = () => {
         if (!isLoggedIn) {
             Swal.fire({
-                text: 'Login to vote',
+                text: 'Vui lòng Đăng nhập để Đánh giá',
                 cancelButtonText: 'Cancel',
-                confirmButtonText: 'Go login',
+                confirmButtonText: 'Đăng nhập',
                 title: 'Oops!',
                 showCancelButton: true,
             }).then((rs) => {
@@ -69,7 +69,7 @@ const ProductInfomation = ({ totalRatings, ratings, nameProduct, pid, rerender }
                         <span className='flex items-center gap-1'>{renderStarFromNumber(totalRatings)?.map((el, index) => (
                             <span key={index}>{el}</span>
                         ))}</span>
-                        <span className='text-sm'>{`${ratings?.length} reviewers and commentors`}</span>
+                        <span className='text-sm'>{`${ratings?.length} đánh giá và bình luận`}</span>
                     </div>
                     <div className='flex-6 flex gap-2 flex-col p-4'>
                         {Array.from(Array(5).keys()).reverse().map(el => (
@@ -83,10 +83,10 @@ const ProductInfomation = ({ totalRatings, ratings, nameProduct, pid, rerender }
                     </div>
                 </div>
                 <div className='p-4 flex items-center justify-center text-sm flex-col gap-2'>
-                    <span>Do you review this product?</span>
+                    <span>Bạn đã đánh giá sản phẩm?</span>
                     <Button handleOnClick={handleVoteNow}
                     >
-                        Vote now!
+                        Đánh giá ngay!
                     </Button>
                 </div>
                 <div className='flex flex-col gap-4'>

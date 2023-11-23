@@ -88,13 +88,13 @@ const UpdateProduct = ({ editProduct, render, setEditProduct }) => {
         <div className='w-full flex flex-col gap-4 relative'>
             <div className='h-[69px] w-full'></div>
             <div className='p-4 border-b bg-gray-100 flex justify-between items-center right-0 left-[327px] fixed top-0'>
-                <h1 className='text-3xl font-bold tracking-tight'>Update products</h1>
-                <span className='text-main hover:underline cursor-pointer' onClick={() => setEditProduct(null)} >Cancel</span>
+                <h1 className='text-3xl font-bold tracking-tight'>Cập Nhật Sản Phẩm</h1>
+                <span className='text-main hover:underline cursor-pointer' onClick={() => setEditProduct(null)} >Huỷ Bỏ</span>
             </div>
             <div className='p-4'>
                 <form onSubmit={handleSubmit(handleUpdateProduct)}>
                     <InputForm
-                        label='Name product'
+                        label='Tên Sản Phẩm'
                         register={register}
                         errors={errors}
                         id='title'
@@ -102,11 +102,11 @@ const UpdateProduct = ({ editProduct, render, setEditProduct }) => {
                             required: 'Need fill this field'
                         }}
                         fullWidth
-                        placeholder='Name of new product'
+                        placeholder='Tên sản phẩm mới'
                     />
                     <div className='w-full my-6 flex gap-4'>
                         <InputForm
-                            label='Price'
+                            label='Giá'
                             register={register}
                             errors={errors}
                             id='price'
@@ -114,11 +114,11 @@ const UpdateProduct = ({ editProduct, render, setEditProduct }) => {
                                 required: 'Need fill this field'
                             }}
                             style='flex-auto'
-                            placeholder='Price of new product'
+                            placeholder='Giá sản phẩm'
                             type='number'
                         />
                         <InputForm
-                            label='Quantity'
+                            label='Số Lượng'
                             register={register}
                             errors={errors}
                             id='quantity'
@@ -126,11 +126,11 @@ const UpdateProduct = ({ editProduct, render, setEditProduct }) => {
                                 required: 'Need fill this field'
                             }}
                             style='flex-auto'
-                            placeholder='Quantity of new product'
+                            placeholder='Số lượng sản phẩm'
                             type='number'
                         />
                         <InputForm
-                            label='Color'
+                            label='Màu Sắc'
                             register={register}
                             errors={errors}
                             id='color'
@@ -138,12 +138,12 @@ const UpdateProduct = ({ editProduct, render, setEditProduct }) => {
                                 required: 'Need fill this field'
                             }}
                             style='flex-auto'
-                            placeholder='color of new product'
+                            placeholder='Màu sắc sản phẩm'
                         />
                     </div>
                     <div className='w-full my-6 flex gap-4'>
                         <Select
-                            label='Category'
+                            label='Danh Mục'
                             options={categories?.map(el => ({ code: el.title, value: el.title }))}
                             register={register}
                             id='category'
@@ -153,7 +153,7 @@ const UpdateProduct = ({ editProduct, render, setEditProduct }) => {
                             fullWidth
                         />
                         <Select
-                            label='Brand (Optional)'
+                            label='Thương Hiệu'
                             options={categories?.find(el => el.title === watch('category'))?.brand?.map(el => ({ code: el.toLowerCase(), value: el }))}
                             register={register}
                             id='brand'
@@ -163,9 +163,9 @@ const UpdateProduct = ({ editProduct, render, setEditProduct }) => {
                         />
                     </div>
                     <MarkdownEditor
-                        name='description'
+                        name='Mô Tả'
                         changeValue={changeValue}
-                        label='Description'
+                        label='Mô Tả'
                         invalidFields={invalidFields}
                         setInvalidFields={setInvalidFields}
                         value={payload.description}
@@ -183,7 +183,7 @@ const UpdateProduct = ({ editProduct, render, setEditProduct }) => {
                         <img src={preview.thumb} alt="thumbnail" className='w-[200px] object-contain' />
                     </div>}
                     <div className='flex flex-col gap-2 mt-8'>
-                        <label className='font-semibold' htmlFor="products">Upload images of product</label>
+                        <label className='font-semibold' htmlFor="products">Tải lên hình Sản phẩm</label>
                         <input
                             type="file"
                             id="products"
@@ -202,7 +202,7 @@ const UpdateProduct = ({ editProduct, render, setEditProduct }) => {
                             </div>
                         ))}
                     </div>}
-                    <div className='my-6'><Button type='submit'>Update new product</Button></div>
+                    <div className='my-6'><Button type='submit'>Cập nhật Sản phẩm</Button></div>
                 </form>
             </div>
         </div>

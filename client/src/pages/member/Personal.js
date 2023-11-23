@@ -42,11 +42,11 @@ const Personal = ({ navigate }) => {
     return (
         <div className='w-full relative px-4'>
             <header className='text-3xl font-semibold py-4 border-b border-b-blue-200'>
-                Personal
+                Thông tin cá nhân
             </header>
             <form onSubmit={handleSubmit(handleUpdateInfor)} className='w-3/5 mx-auto py-8 flex flex-col gap-4'>
                 <InputForm
-                    label='Firstname'
+                    label='Họ'
                     register={register}
                     errors={errors}
                     id='firstname'
@@ -55,7 +55,7 @@ const Personal = ({ navigate }) => {
                     }}
                 />
                 <InputForm
-                    label='Lastname'
+                    label='Tên'
                     register={register}
                     errors={errors}
                     id='lastname'
@@ -64,7 +64,7 @@ const Personal = ({ navigate }) => {
                     }}
                 />
                 <InputForm
-                    label='Email address'
+                    label='Email'
                     register={register}
                     errors={errors}
                     id='email'
@@ -74,7 +74,7 @@ const Personal = ({ navigate }) => {
                     }}
                 />
                 <InputForm
-                    label='Phone'
+                    label='Số điện thoại'
                     register={register}
                     errors={errors}
                     id='mobile'
@@ -88,7 +88,7 @@ const Personal = ({ navigate }) => {
                     }}
                 />
                 <InputForm
-                    label='Address'
+                    label='Địa chỉ'
                     register={register}
                     errors={errors}
                     id='address'
@@ -97,7 +97,7 @@ const Personal = ({ navigate }) => {
                     }}
                 />
                 <div className='flex items-center gap-2'>
-                    <span className='font-medium'>Account status:</span>
+                    <span className='font-medium'>Trạng thái:</span>
                     <span>{current?.isBlocked ? 'Blocked' : 'Actived'}</span>
                 </div>
                 <div className='flex items-center gap-2'>
@@ -105,17 +105,17 @@ const Personal = ({ navigate }) => {
                     <span>{+current?.role === 1945 ? 'Admin' : 'User'}</span>
                 </div>
                 <div className='flex items-center gap-2'>
-                    <span className='font-medium'>Created At:</span>
+                    <span className='font-medium'>Tạo lúc:</span>
                     <span>{moment(current?.createdAt).fromNow()}</span>
                 </div>
                 <div className='flex flex-col gap-2'>
-                    <span className='font-medium'>Profile image:</span>
+                    <span className='font-medium'>Hình ảnh:</span>
                     <label htmlFor="file">
                         <img src={current?.avatar || avatar} alt="avatar" className='w-20 h-20 ml-8 object-cover rounded-full' />
                     </label>
                     <input type="file" id="file" {...register('avatar')} hidden />
                 </div>
-                {isDirty && <div className='w-full flex justify-end'><Button type='submit'>Update information</Button></div>}
+                {isDirty && <div className='w-full flex justify-end'><Button type='submit'>Cập nhật</Button></div>}
             </form>
         </div>
     )

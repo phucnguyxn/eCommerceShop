@@ -240,13 +240,13 @@ const DetailProduct = ({ isQuickView, data, location, dispatch, navigate }) => {
             <h2 className="text-[30px] font-semibold">{`${formatMoney(
               fotmatPrice(currentProduct.price || product?.price)
             )} VNĐ`}</h2>
-            <span className="text-sm text-main">{`In stock: ${product?.quantity}`}</span>
+            <span className="text-sm text-main">{`Còn hàng: ${product?.quantity}`}</span>
           </div>
           <div className="flex items-center gap-1">
             {renderStarFromNumber(product?.totalRatings)?.map((el, index) => (
               <span key={index}>{el}</span>
             ))}
-            <span className="text-sm text-main italic">{`(Sold: ${product?.sold} pieces)`}</span>
+            <span className="text-sm text-main italic">{`(Đã bán: ${product?.sold} pieces)`}</span>
           </div>
           <ul className="list-square text-sm text-gray-500 pl-4">
             {product?.description?.length > 1 &&
@@ -265,7 +265,7 @@ const DetailProduct = ({ isQuickView, data, location, dispatch, navigate }) => {
             )}
           </ul>
           <div className="my-4 flex gap-4">
-            <span className="font-bold">Color:</span>
+            <span className="font-bold">Màu sắc:</span>
             <div className="flex flex-wrap gap-4 items-center w-full">
               <div
                 onClick={() => setVarriant(null)}
@@ -308,7 +308,7 @@ const DetailProduct = ({ isQuickView, data, location, dispatch, navigate }) => {
           </div>
           <div className="flex flex-col gap-8">
             <div className="flex items-center gap-4">
-              <span className="font-semibold">Quantity</span>
+              <span className="font-semibold">Số lượng</span>
               <SelectQuantity
                 quantity={quantity}
                 handleQuantity={handleQuantity}
@@ -316,7 +316,7 @@ const DetailProduct = ({ isQuickView, data, location, dispatch, navigate }) => {
               />
             </div>
             <Button handleOnClick={handleAddToCart} fw>
-              Add to Cart
+              Thêm vào giỏ
             </Button>
           </div>
         </div>

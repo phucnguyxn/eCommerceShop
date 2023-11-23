@@ -6,8 +6,8 @@ import { useDispatch, useSelector } from "react-redux"
 import clsx from "clsx"
 
 const tabs = [
-  { id: 1, name: "best sellers" },
-  { id: 2, name: "new arrivals" },
+  { id: 1, name: "BÁN CHẠY NHẤT" },
+  { id: 2, name: "HÀNG MỚI VỀ" },
 ]
 
 const BestSeller = () => {
@@ -39,9 +39,8 @@ const BestSeller = () => {
         {tabs.map((el) => (
           <span
             key={el.id}
-            className={`font-semibold uppercase px-8 border-r cursor-pointer text-gray-400 ${
-              activedTab === el.id ? "text-gray-900" : ""
-            }`}
+            className={`font-semibold uppercase px-8 border-r cursor-pointer text-gray-400 ${activedTab === el.id ? "text-gray-900" : ""
+              }`}
             onClick={() => setActivedTab(el.id)}
           >
             {el.name}

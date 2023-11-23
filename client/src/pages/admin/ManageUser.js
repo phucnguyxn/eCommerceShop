@@ -67,7 +67,7 @@ const ManageUser = () => {
     return (
         <div className={clsx('w-full', editElm && 'pl-16')}>
             <h1 className='h-[75px] flex justify-between items-center text-3xl font-bold px-4 border-b'>
-                <span>Manage users</span>
+                <span>Quản Lý Người Dùng</span>
             </h1>
             <div className='w-full p-4'>
                 <div className='flex justify-end py-4'>
@@ -76,23 +76,23 @@ const ManageUser = () => {
                         value={queries.q}
                         setValue={setQueries}
                         style={'w500'}
-                        placeholder='Search name or mail user...'
+                        placeholder='Tìm kiếm tên hoặc email...'
                         isHideLabel
                     />
                 </div>
                 <form onSubmit={handleSubmit(handleUpdate)}>
-                    {editElm && <Button type='submit'>Update</Button>}
+                    {editElm && <Button type='submit'>Cập nhật</Button>}
                     <table className='table-auto mb-6 text-left w-full'>
                         <thead className='font-bold bg-gray-700 text-[13px] text-white'>
                             <tr className='border border-gray-500'>
                                 <th className='px-4 py-2'>#</th>
-                                <th className='px-4 py-2'>Email address</th>
-                                <th className='px-4 py-2'>Firstname</th>
-                                <th className='px-4 py-2'>Lastname</th>
+                                <th className='px-4 py-2'>Email </th>
+                                <th className='px-4 py-2'>Họ</th>
+                                <th className='px-4 py-2'>Tên</th>
                                 <th className='px-4 py-2'>Role</th>
-                                <th className='px-4 py-2'>Phone</th>
-                                <th className='px-4 py-2'>Status</th>
-                                <th className='px-4 py-2'>Created At</th>
+                                <th className='px-4 py-2'>Số điện thoại</th>
+                                <th className='px-4 py-2'>Trạng thái</th>
+                                <th className='px-4 py-2'>Được tạc</th>
                                 <th className='px-4 py-2'>Actions</th>
                             </tr>
                         </thead>
@@ -188,9 +188,9 @@ const ManageUser = () => {
                                     </td>
                                     <td className='py-2 px-4'>{moment(el.createdAt).format('DD/MM/YYYY')}</td>
                                     <td className='py-2 px-4'>
-                                        {editElm?._id === el._id ? <span onClick={() => setEditElm(null)} className='px-2 text-orange-600 hover:underline cursor-pointer'>Back</span>
-                                            : <span onClick={() => setEditElm(el)} className='px-2 text-orange-600 hover:underline cursor-pointer'>Edit</span>}
-                                        <span onClick={() => handleDeleteUser(el._id)} className='px-2 text-orange-600 hover:underline cursor-pointer'>Delete</span>
+                                        {editElm?._id === el._id ? <span onClick={() => setEditElm(null)} className='px-2 text-orange-600 hover:underline cursor-pointer'>Trở về</span>
+                                            : <span onClick={() => setEditElm(el)} className='px-2 text-orange-600 hover:underline cursor-pointer'>Sửa</span>}
+                                        <span onClick={() => handleDeleteUser(el._id)} className='px-2 text-orange-600 hover:underline cursor-pointer'>Xoá</span>
                                     </td>
                                 </tr>
                             ))}

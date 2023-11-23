@@ -56,7 +56,7 @@ const History = ({ navigate, location }) => {
               register={register}
               errors={errors}
               fullWidth
-              placeholder="Search orders by status,..."
+              placeholder="Tìm đơn hàng,..."
             />
           </div>
           <div className="col-span-1 flex items-center">
@@ -103,7 +103,7 @@ const History = ({ navigate, location }) => {
                       <span className="flex flex-col">
                         <span className="text-main text-sm">{item.title}</span>
                         <span className="flex items-center text-xs gap-2">
-                          <span>Quantity:</span>
+                          <span>Số lượng:</span>
                           <span className="text-main">{item.quantity}</span>
                         </span>
                       </span>
