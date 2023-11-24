@@ -33,7 +33,7 @@ const CreateProducts = () => {
         const imagesPreview = []
         for (let file of files) {
             if (file.type !== 'image/png' && file.type !== 'image/jpeg') {
-                toast.warning('File not supported!')
+                toast.warning('Tệp không được hỗ trợ!')
                 return
             }
             const base64 = await getBase64(file)
@@ -86,10 +86,10 @@ const CreateProducts = () => {
                         errors={errors}
                         id='title'
                         validate={{
-                            required: 'Need fill this field'
+                            required: 'Không được để trống!'
                         }}
                         fullWidth
-                        placeholder='Tên sản phẩm mới'
+                        placeholder='Tên sản phẩm'
                     />
                     <div className='w-full my-6 flex gap-4'>
                         <InputForm
@@ -98,10 +98,10 @@ const CreateProducts = () => {
                             errors={errors}
                             id='price'
                             validate={{
-                                required: 'Need fill this field'
+                                required: 'Không được để trống!'
                             }}
                             style='flex-auto'
-                            placeholder='Giá của sản phẩm mới'
+                            placeholder='Giá của sản phẩm'
                             type='number'
                         />
                         <InputForm
@@ -110,10 +110,10 @@ const CreateProducts = () => {
                             errors={errors}
                             id='quantity'
                             validate={{
-                                required: 'Need fill this field'
+                                required: 'Không được để trống!'
                             }}
                             style='flex-auto'
-                            placeholder='Quantity of new product'
+                            placeholder='Số lượng của sản phẩm'
                             type='number'
                         />
                         <InputForm
@@ -122,10 +122,10 @@ const CreateProducts = () => {
                             errors={errors}
                             id='color'
                             validate={{
-                                required: 'Need fill this field'
+                                required: 'Không được để trống!'
                             }}
                             style='flex-auto'
-                            placeholder='color of new product'
+                            placeholder='Màu sắc của sản phẩm'
                         />
                     </div>
                     <div className='w-full my-6 flex gap-4'>
@@ -134,7 +134,7 @@ const CreateProducts = () => {
                             options={categories?.map(el => ({ code: el._id, value: el.title }))}
                             register={register}
                             id='category'
-                            validate={{ required: 'Need fill this field' }}
+                            validate={{ required: 'Không được để trống!' }}
                             style='flex-auto'
                             errors={errors}
                             fullWidth
