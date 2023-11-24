@@ -121,7 +121,7 @@ const DealDaily = ({ dispatch }) => {
           className="flex gap-2 items-center justify-center w-full bg-main hover:bg-gray-800 text-white font-medium py-2"
         >
           <AiOutlineMenu />
-          <span>Options</span>
+          <span>Tuỳ Chọn</span>
         </button>
       </div>
     </div>

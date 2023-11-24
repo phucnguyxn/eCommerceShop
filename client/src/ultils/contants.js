@@ -121,37 +121,37 @@ export const sorts = [
   {
     id: 1,
     value: "-sold",
-    text: "Best selling",
+    text: "Bán chạy nhất",
   },
   {
     id: 2,
     value: "-title",
-    text: "Alphabetically, A-Z",
+    text: "A-Z",
   },
   {
     id: 3,
     value: "title",
-    text: "Alphabetically, Z-A",
+    text: "Z-A",
   },
   {
     id: 4,
     value: "-price",
-    text: "Price, high to low",
+    text: "Giá - Cao đến thấp",
   },
   {
     id: 5,
     value: "price",
-    text: "Price, low to high",
+    text: "Giá - Thấp đến cao",
   },
   {
     id: 6,
     value: "-createdAt",
-    text: "Date, new to old",
+    text: "Mới nhất",
   },
   {
     id: 7,
     value: "createdAt",
-    text: "Date, old to new",
+    text: "Cũ nhất",
   },
 ]
 

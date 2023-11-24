@@ -35,7 +35,7 @@ const Home = ({ navigate }) => {
       </div>
       <div className="my-8 w-main m-auto">
         <h3 className="text-[20px] font-semibold py-[15px] border-b-2 border-main">
-          NEW ARRIVALS
+          HÀNG MỚI VỀ
         </h3>
         <div className="mt-4 mx-[-10px]">
           <CustomSlider products={newProducts} />
@@ -43,7 +43,7 @@ const Home = ({ navigate }) => {
       </div>
       <div className="my-8 w-main m-auto">
         <h3 className="text-[20px] font-semibold py-[15px] border-b-2 border-main">
-          HOT COLLECTIONS
+          BỘ SƯU TẬP HOT NHẤT
         </h3>
         <div className="flex flex-wrap gap-4 mt-4">
           {categories
@@ -85,7 +85,7 @@ const Home = ({ navigate }) => {
       </div>
       <div className="my-8 w-main m-auto">
         <h3 className="text-[20px] font-semibold py-[15px] border-b-2 border-main">
-          BLOG POSTS
+          BÀI ĐĂNG BLOG
         </h3>
       </div>
     </div>
