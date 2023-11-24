@@ -13,7 +13,7 @@ const DetailCart = ({ location, navigate }) => {
         if (!current?.address) return Swal.fire({
             icon: 'info',
             title: 'Almost!',
-            text: 'Please update your address before checkout.',
+            text: 'Vui lòng cập nhật địa chỉ của bạn trước khi thanh toán.',
             showCancelButton: true,
             showConfirmButton: true,
             confirmButtonText: 'Go update',
@@ -57,7 +57,7 @@ const DetailCart = ({ location, navigate }) => {
                     <span>Subtotal:</span>
                     <span className='text-main font-bold'>{`${formatMoney(currentCart?.reduce((sum, el) => +el?.price * el.quantity + sum, 0))} VND`}</span>
                 </span>
-                <span className='text-xs italic'>Shipping, taxes, and discounts calculated at checkout</span>
+                <span className='text-xs italic'>Phí vận chuyển, thuế và chiết khấu được tính khi thanh toán.</span>
                 <Button handleOnClick={handleSubmit}>Thanh toán</Button>
             </div>
         </div >
