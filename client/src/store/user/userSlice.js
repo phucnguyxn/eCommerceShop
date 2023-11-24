@@ -52,7 +52,7 @@ export const userSlice = createSlice({
             state.current = null;
             state.isLoggedIn = false
             state.token = null
-            state.mes = 'Đã hết phiên đăng nhập.Vui lòng đăng nhập lại!'
+            state.mes = 'Đã hết phiên đăng nhập. Vui lòng đăng nhập lại!'
         });
     }
 })
