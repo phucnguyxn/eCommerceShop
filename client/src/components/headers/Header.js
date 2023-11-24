@@ -30,7 +30,7 @@ const Header = ({ dispatch }) => {
     return (
         <div className='w-main flex justify-between h-[110px] py-[35px]'>
             <Link to={`/${path.HOME}`}>
-                <img src={logo} alt="logo" className='w-[234px] object-contain' />
+                <img src={logo} alt="logo" className='w-[350px] object-contain' />
             </Link>
             <div className='flex text-[13px]'>
                 <div className='flex flex-col px-6 border-r items-center'>
