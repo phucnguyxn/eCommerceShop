@@ -129,7 +129,7 @@ const DetailProduct = ({ isQuickView, data, location, dispatch, navigate }) => {
     if (!current)
       return Swal.fire({
         title: "Almost...",
-        text: "Please login first!",
+        text: "Vui lòng đăng nhập!",
         icon: "info",
         cancelButtonText: "Not now!",
         showCancelButton: true,

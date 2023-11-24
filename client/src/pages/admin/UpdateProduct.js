@@ -47,7 +47,7 @@ const UpdateProduct = ({ editProduct, render, setEditProduct }) => {
         const imagesPreview = []
         for (let file of files) {
             if (file.type !== 'image/png' && file.type !== 'image/jpeg') {
-                toast.warning('File not supported!')
+                toast.warning('Tệp không được hỗ trợ!')
                 return
             }
             const base64 = await getBase64(file)
@@ -99,10 +99,10 @@ const UpdateProduct = ({ editProduct, render, setEditProduct }) => {
                         errors={errors}
                         id='title'
                         validate={{
-                            required: 'Need fill this field'
+                            required: 'Không được để trống!'
                         }}
                         fullWidth
-                        placeholder='Tên sản phẩm mới'
+                        placeholder='Tên sản phẩm'
                     />
                     <div className='w-full my-6 flex gap-4'>
                         <InputForm
@@ -111,7 +111,7 @@ const UpdateProduct = ({ editProduct, render, setEditProduct }) => {
                             errors={errors}
                             id='price'
                             validate={{
-                                required: 'Need fill this field'
+                                required: 'Không được để trống!'
                             }}
                             style='flex-auto'
                             placeholder='Giá sản phẩm'
@@ -123,7 +123,7 @@ const UpdateProduct = ({ editProduct, render, setEditProduct }) => {
                             errors={errors}
                             id='quantity'
                             validate={{
-                                required: 'Need fill this field'
+                                required: 'Không được để trống!'
                             }}
                             style='flex-auto'
                             placeholder='Số lượng sản phẩm'
@@ -135,7 +135,7 @@ const UpdateProduct = ({ editProduct, render, setEditProduct }) => {
                             errors={errors}
                             id='color'
                             validate={{
-                                required: 'Need fill this field'
+                                required: 'Không được để trống!'
                             }}
                             style='flex-auto'
                             placeholder='Màu sắc sản phẩm'
@@ -147,7 +147,7 @@ const UpdateProduct = ({ editProduct, render, setEditProduct }) => {
                             options={categories?.map(el => ({ code: el.title, value: el.title }))}
                             register={register}
                             id='category'
-                            validate={{ required: 'Need fill this field' }}
+                            validate={{ required: 'Không được để trống!' }}
                             style='flex-auto'
                             errors={errors}
                             fullWidth

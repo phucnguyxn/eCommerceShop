@@ -84,7 +84,7 @@ const Login = () => {
         <div className='w-screen h-screen relative'>
             {isVerifiedEmail && <div className='absolute top-0 left-0 right-0 bottom-0 bg-overlay z-50 flex flex-col justify-center items-center'>
                 <div className='bg-white w-[500px] rounded-md p-8'>
-                    <h4 className=''>Chúng tôi gửi code đến mail cảu bạn.Vui lòng kiểm tra mail:</h4>
+                    <h4 className=''>Chúng tôi gửi mã đến mail của bạn. Vui lòng kiểm tra mail:</h4>
                     <input type="text"
                         value={token}
                         onChange={e => setToken(e.target.value)}
@@ -95,7 +95,7 @@ const Login = () => {
                         className='px-4 py-2 bg-blue-500 font-semibold text-white rounded-md ml-4'
                         onClick={finalRegister}
                     >
-                        Submit
+                        Gửi
                     </button>
                 </div>
             </div>}

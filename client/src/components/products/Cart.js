@@ -51,7 +51,7 @@ const Cart = ({ dispatch, navigate }) => {
                     <span>Tổng Cộng:</span>
                     <span>{formatMoney(currentCart?.reduce((sum, el) => sum + Number(el.price) * el.quantity, 0)) + ' VND'}</span>
                 </div>
-                <span className='text-center text-gray-700 italic text-xs'>Shipping, taxes, and discounts calculated at checkout.</span>
+                <span className='text-center text-gray-700 italic text-xs'>Vận chuyển, thuế và giảm giá được tính khi thanh toán.</span>
                 <Button handleOnClick={() => {
                     dispatch(showCart())
                     navigate(`/${path.MEMBER}/${path.DETAIL_CART}`)

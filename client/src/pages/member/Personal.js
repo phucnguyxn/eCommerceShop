@@ -51,7 +51,7 @@ const Personal = ({ navigate }) => {
                     errors={errors}
                     id='firstname'
                     validate={{
-                        required: 'Need fill this field'
+                        required: 'Không được để trống!'
                     }}
                 />
                 <InputForm
@@ -60,7 +60,7 @@ const Personal = ({ navigate }) => {
                     errors={errors}
                     id='lastname'
                     validate={{
-                        required: 'Need fill this field'
+                        required: 'Không được để trống!'
                     }}
                 />
                 <InputForm
@@ -69,8 +69,8 @@ const Personal = ({ navigate }) => {
                     errors={errors}
                     id='email'
                     validate={{
-                        required: 'Need fill this field',
-                        pattern: { value: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, message: 'Email invalid.' }
+                        required: 'Không được để trống!',
+                        pattern: { value: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, message: 'Email không hợp lệ!' }
                     }}
                 />
                 <InputForm
@@ -79,10 +79,10 @@ const Personal = ({ navigate }) => {
                     errors={errors}
                     id='mobile'
                     validate={{
-                        required: 'Need fill this field',
+                        required: 'Không được để trống!',
                         pattern: {
                             value: /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4}$/gm,
-                            message: 'Phone invalid.'
+                            message: 'Số điện thoại không hợp lệ!.'
                         }
 
                     }}
@@ -93,7 +93,7 @@ const Personal = ({ navigate }) => {
                     errors={errors}
                     id='address'
                     validate={{
-                        required: 'Need fill this field',
+                        required: 'Không được để trống!',
                     }}
                 />
                 <div className='flex items-center gap-2'>
