@@ -11,24 +11,6 @@ const makeToken = require("uniqid");
 const { users } = require("../ultils/constant");
 const user = require("../models/user");
 
-// const register = asyncHandler(async (req, res) => {
-//     const { email, password, firstname, lastname } = req.body
-//     if (!email || !password || !lastname || !firstname)
-//         return res.status(400).json({
-//             success: false,
-//             mes: 'Missing inputs'
-//         })
-
-//     const user = await User.findOne({ email })
-//     if (user) throw new Error('User has existed')
-//     else {
-//         const newUser = await User.create(req.body)
-//         return res.status(200).json({
-//             success: newUser ? true : false,
-//             mes: newUser ? 'Register is successfully. Please go login~' : 'Something went wrong'
-//         })
-//     }
-// })
 const register = asyncHandler(async (req, res) => {
   const { email, password, firstname, lastname, mobile } = req.body;
   if (!email || !password || !lastname || !firstname || !mobile)
@@ -39,8 +21,6 @@ const register = asyncHandler(async (req, res) => {
   const user = await User.findOne({ email });
   if (user) throw new Error("User has existed");
   else {
-    // const token = makeToken();
-    // const emailedited = btoa(email) + "@" + token;
     const newUser = await User.create({
       email,
       password,
@@ -48,21 +28,9 @@ const register = asyncHandler(async (req, res) => {
       lastname,
       mobile,
     });
-    // if (newUser) {
-    //   const html = `<h2>Register code:</h2><br /><blockquote>${token}</blockquote>`
-    //   await sendMail({
-    //     email,
-    //     html,
-    //     subject: "Confirm register account in Digital World",
-    //   })
-    // }
-    // setTimeout(async () => {
-    //   await User.deleteOne({ email: emailedited })
-    // }, [300000])
 
     return res.json({
       success: newUser ? true : false,
-      // token,
       mes: newUser
         ? "Please check your email to active account"
         : "Some went wrong, please try later",
@@ -70,7 +38,6 @@ const register = asyncHandler(async (req, res) => {
   }
 });
 const finalRegister = asyncHandler(async (req, res) => {
-  // const cookie = req.cookies
   const { token } = req.params;
   const notActivedEmail = await User.findOne({
     email: new RegExp(`${token}$`),

@@ -64,7 +64,7 @@ const Login = () => {
         // dispatch(showModal({ isShowModal: false, modalChildren: null }))
         if (response.success) {
           //   setIsVerifiedEmail(true);
-          Swal.fire("Register successfully!", response.mes, "error");
+          Swal.fire("Register successfully!", response.mes, "success");
         } else Swal.fire("Oops!", response.mes, "error");
       } else {
         const rs = await apiLogin(data);
