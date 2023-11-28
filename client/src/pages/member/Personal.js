@@ -42,62 +42,62 @@ const Personal = ({ navigate }) => {
     return (
         <div className='w-full relative px-4'>
             <header className='text-3xl font-semibold py-4 border-b border-b-blue-200'>
-                Thông tin cá nhân
+                Personal
             </header>
             <form onSubmit={handleSubmit(handleUpdateInfor)} className='w-3/5 mx-auto py-8 flex flex-col gap-4'>
                 <InputForm
-                    label='Họ'
+                    label='Firstname'
                     register={register}
                     errors={errors}
                     id='firstname'
                     validate={{
-                        required: 'Không được để trống!'
+                        required: 'Need fill this field'
                     }}
                 />
                 <InputForm
-                    label='Tên'
+                    label='Lastname'
                     register={register}
                     errors={errors}
                     id='lastname'
                     validate={{
-                        required: 'Không được để trống!'
+                        required: 'Need fill this field'
                     }}
                 />
                 <InputForm
-                    label='Email'
+                    label='Email address'
                     register={register}
                     errors={errors}
                     id='email'
                     validate={{
-                        required: 'Không được để trống!',
-                        pattern: { value: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, message: 'Email không hợp lệ!' }
+                        required: 'Need fill this field',
+                        pattern: { value: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, message: 'Email invalid.' }
                     }}
                 />
                 <InputForm
-                    label='Số điện thoại'
+                    label='Phone'
                     register={register}
                     errors={errors}
                     id='mobile'
                     validate={{
-                        required: 'Không được để trống!',
+                        required: 'Need fill this field',
                         pattern: {
                             value: /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4}$/gm,
-                            message: 'Số điện thoại không hợp lệ!.'
+                            message: 'Phone invalid.'
                         }
 
                     }}
                 />
                 <InputForm
-                    label='Địa chỉ'
+                    label='Address'
                     register={register}
                     errors={errors}
                     id='address'
                     validate={{
-                        required: 'Không được để trống!',
+                        required: 'Need fill this field',
                     }}
                 />
                 <div className='flex items-center gap-2'>
-                    <span className='font-medium'>Trạng thái:</span>
+                    <span className='font-medium'>Account status:</span>
                     <span>{current?.isBlocked ? 'Blocked' : 'Actived'}</span>
                 </div>
                 <div className='flex items-center gap-2'>
@@ -105,17 +105,17 @@ const Personal = ({ navigate }) => {
                     <span>{+current?.role === 1945 ? 'Admin' : 'User'}</span>
                 </div>
                 <div className='flex items-center gap-2'>
-                    <span className='font-medium'>Tạo lúc:</span>
+                    <span className='font-medium'>Created At:</span>
                     <span>{moment(current?.createdAt).fromNow()}</span>
                 </div>
                 <div className='flex flex-col gap-2'>
-                    <span className='font-medium'>Hình ảnh:</span>
+                    <span className='font-medium'>Profile image:</span>
                     <label htmlFor="file">
                         <img src={current?.avatar || avatar} alt="avatar" className='w-20 h-20 ml-8 object-cover rounded-full' />
                     </label>
                     <input type="file" id="file" {...register('avatar')} hidden />
                 </div>
-                {isDirty && <div className='w-full flex justify-end'><Button type='submit'>Cập nhật</Button></div>}
+                {isDirty && <div className='w-full flex justify-end'><Button type='submit'>Update information</Button></div>}
             </form>
         </div>
     )

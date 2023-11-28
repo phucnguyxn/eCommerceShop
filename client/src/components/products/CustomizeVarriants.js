@@ -51,7 +51,7 @@ const CustomizeVarriants = ({ customizeVarriant, setCustomizeVarriant, render })
         const imagesPreview = []
         for (let file of files) {
             if (file.type !== 'image/png' && file.type !== 'image/jpeg') {
-                toast.warning('Tệp không được hỗ trợ!')
+                toast.warning('File not supported!')
                 return
             }
             const base64 = await getBase64(file)
@@ -71,7 +71,7 @@ const CustomizeVarriants = ({ customizeVarriant, setCustomizeVarriant, render })
         <div className='w-full flex flex-col gap-4 relative'>
             <div className='h-[69px] w-full'></div>
             <div className='p-4 border-b bg-gray-100 flex justify-between items-center right-0 left-[327px] fixed top-0'>
-                <h1 className='text-3xl font-bold tracking-tight'>Tùy chỉnh sản phẩm</h1>
+                <h1 className='text-3xl font-bold tracking-tight'>Custiomize varriants of products</h1>
                 <span
                     className='text-main hover:underline cursor-pointer'
                     onClick={() => setCustomizeVarriant(null)}
@@ -89,9 +89,9 @@ const CustomizeVarriants = ({ customizeVarriant, setCustomizeVarriant, render })
                         fullWidth
                         style='flex-auto'
                         validate={{
-                            required: 'Không được để trống!'
+                            required: 'Need fill this field'
                         }}
-                        placeholder='Tiêu đề'
+                        placeholder='Title of varriant'
                     />
                 </div>
                 <div className='flex gap-4 items-center w-full'>
@@ -101,10 +101,10 @@ const CustomizeVarriants = ({ customizeVarriant, setCustomizeVarriant, render })
                         errors={errors}
                         id='price'
                         validate={{
-                            required: 'Không được để trống!'
+                            required: 'Need fill this field'
                         }}
                         fullWidth
-                        placeholder='Giá'
+                        placeholder='Price of new varriant'
                         type='number'
                         style='flex-auto'
                     />
@@ -114,10 +114,10 @@ const CustomizeVarriants = ({ customizeVarriant, setCustomizeVarriant, render })
                         errors={errors}
                         id='color'
                         validate={{
-                            required: 'Không được để trống!'
+                            required: 'Need fill this field'
                         }}
                         fullWidth
-                        placeholder='Màu sắc'
+                        placeholder='Color of new varriant'
                         style='flex-auto'
                     />
                 </div>
@@ -134,12 +134,12 @@ const CustomizeVarriants = ({ customizeVarriant, setCustomizeVarriant, render })
                     <img src={preview.thumb} alt="thumbnail" className='w-[200px] object-contain' />
                 </div>}
                 <div className='flex flex-col gap-2 mt-8'>
-                    <label className='font-semibold' htmlFor="products">Tải lên hình ảnh của sản phẩm</label>
+                    <label className='font-semibold' htmlFor="products">Upload images of product</label>
                     <input
                         type="file"
                         id="products"
                         multiple
-                        {...register('images', { required: 'Không được để trống!' })}
+                        {...register('images', { required: 'Need fill' })}
                     />
                     {errors['images'] && <small className='text-xs text-red-500'>{errors['images']?.message}</small>}
                 </div>
@@ -153,7 +153,7 @@ const CustomizeVarriants = ({ customizeVarriant, setCustomizeVarriant, render })
                         </div>
                     ))}
                 </div>}
-                <div className='my-6'><Button type='submit'>Gửi</Button></div>
+                <div className='my-6'><Button type='submit'>Add varriant</Button></div>
             </form>
         </div>
     )

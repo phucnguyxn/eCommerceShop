@@ -18,7 +18,7 @@ const ResetPassword = () => {
     return (
         <div className='absolute animate-slide-right top-0 left-0 bottom-0 right-0 bg-white flex flex-col items-center py-8 z-50'>
             <div className='flex flex-col gap-4'>
-                <label htmlFor="password">Nhập mật khẩu mới:</label>
+                <label htmlFor="password">Enter your new password:</label>
                 <input
                     type="text"
                     id="password"

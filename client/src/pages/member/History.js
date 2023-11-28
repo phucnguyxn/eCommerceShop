@@ -56,7 +56,7 @@ const History = ({ navigate, location }) => {
               register={register}
               errors={errors}
               fullWidth
-              placeholder="Tìm đơn hàng,..."
+              placeholder="Search orders by status,..."
             />
           </div>
           <div className="col-span-1 flex items-center">
@@ -73,10 +73,10 @@ const History = ({ navigate, location }) => {
         <thead>
           <tr className="border bg-sky-900 text-white border-white">
             <th className="text-center py-2">#</th>
-            <th className="text-center py-2">Sản phẩm</th>
-            <th className="text-center py-2">Tất cả</th>
-            <th className="text-center py-2">Trạng thái</th>
-            <th className="text-center py-2">Được thêm vào</th>
+            <th className="text-center py-2">Products</th>
+            <th className="text-center py-2">Total</th>
+            <th className="text-center py-2">Status</th>
+            <th className="text-center py-2">Created At</th>
           </tr>
         </thead>
         <tbody>
@@ -103,7 +103,7 @@ const History = ({ navigate, location }) => {
                       <span className="flex flex-col">
                         <span className="text-main text-sm">{item.title}</span>
                         <span className="flex items-center text-xs gap-2">
-                          <span>Số lượng:</span>
+                          <span>Quantity:</span>
                           <span className="text-main">{item.quantity}</span>
                         </span>
                       </span>

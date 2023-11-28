@@ -26,11 +26,11 @@ const Cart = ({ dispatch, navigate }) => {
     return (
         <div onClick={e => e.stopPropagation()} className='w-[400px] h-screen bg-black grid grid-rows-10 text-white p-6'>
             <header className='border-b border-gray-500 flex justify-between items-center row-span-1 h-full font-bold text-2xl'>
-                <span>Giỏ Hàng</span>
+                <span>Your Cart</span>
                 <span onClick={() => dispatch(showCart())} className='p-2 cursor-pointer'><AiFillCloseCircle size={24} /></span>
             </header>
             <section className='row-span-7 flex flex-col gap-3 h-full max-h-full overflow-y-auto py-3'>
-                {!currentCart && <span className='text-xs italic'>Giỏ hàng trống.</span>}
+                {!currentCart && <span className='text-xs italic'>Your cart is empty.</span>}
                 {currentCart && currentCart?.map(el => (
                     <div key={el._id} className='flex justify-between items-center'>
                         <div className='flex gap-2'>
@@ -48,14 +48,14 @@ const Cart = ({ dispatch, navigate }) => {
             </section>
             <div className='row-span-2 flex flex-col justify-between h-full'>
                 <div className='flex items-center justify-between pt-4 border-t'>
-                    <span>Tổng Cộng:</span>
+                    <span>Subtotal:</span>
                     <span>{formatMoney(currentCart?.reduce((sum, el) => sum + Number(el.price) * el.quantity, 0)) + ' VND'}</span>
                 </div>
-                <span className='text-center text-gray-700 italic text-xs'>Vận chuyển, thuế và giảm giá được tính khi thanh toán.</span>
+                <span className='text-center text-gray-700 italic text-xs'>Shipping, taxes, and discounts calculated at checkout.</span>
                 <Button handleOnClick={() => {
                     dispatch(showCart())
                     navigate(`/${path.MEMBER}/${path.DETAIL_CART}`)
-                }} style='rounded-none w-full bg-main py-3' >Giỏ hàng</Button>
+                }} style='rounded-none w-full bg-main py-3' >Shopping Cart</Button>
             </div>
 
         </div>

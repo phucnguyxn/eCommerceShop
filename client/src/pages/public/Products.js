@@ -90,7 +90,7 @@ const Products = () => {
       </div>
       <div className="w-main border p-4 flex justify-between mt-8 m-auto">
         <div className="w-4/5 flex-auto flex flex-col gap-3">
-          <span className="font-semibold text-sm">Lọc sản phẩm</span>
+          <span className="font-semibold text-sm">Filter by</span>
           <div className="flex items-center gap-4">
             <SearchItem
               name="price"
@@ -106,7 +106,7 @@ const Products = () => {
           </div>
         </div>
         <div className="w-1/5 flex flex-col gap-3">
-          <span className="font-semibold text-sm">Sắp xếp theo</span>
+          <span className="font-semibold text-sm">Sort by</span>
           <div className="w-full">
             <InputSelect
               changeValue={changeValue}

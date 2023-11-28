@@ -85,7 +85,7 @@ const DealDaily = ({ dispatch }) => {
           <AiFillStar size={20} color="#DD1111" />
         </span>
         <span className="flex-8 font-semibold text-[20px] flex justify-center text-gray-700">
-          ƯU ĐÃI HẰNG NGÀY
+          DEAL DAILY
         </span>
         <span className="flex-1"></span>
       </div>
@@ -121,7 +121,7 @@ const DealDaily = ({ dispatch }) => {
           className="flex gap-2 items-center justify-center w-full bg-main hover:bg-gray-800 text-white font-medium py-2"
         >
           <AiOutlineMenu />
-          <span>Tuỳ Chọn</span>
+          <span>Options</span>
         </button>
       </div>
     </div>

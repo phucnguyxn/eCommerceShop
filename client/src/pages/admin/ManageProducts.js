@@ -101,7 +101,7 @@ const ManageProducts = () => {
       )}
       <div className="h-[69px] w-full"></div>
       <div className="p-4 border-b w-full bg-gray-100 flex justify-between items-center fixed top-0">
-        <h1 className="text-3xl font-bold tracking-tight">Quản Lý Sản Phẩm</h1>
+        <h1 className="text-3xl font-bold tracking-tight">Manage products</h1>
       </div>
       <div className="flex justify-end items-center px-4">
         <form className="w-[45%]">
@@ -110,25 +110,25 @@ const ManageProducts = () => {
             register={register}
             errors={errors}
             fullWidth
-            placeholder="Tìm sản phẩm ...."
+            placeholder="Search products by title, description,..."
           />
         </form>
       </div>
       <table className="table-auto">
         <thead>
           <tr className="border bg-sky-900 text-white border-white">
-            <th className="text-center py-2">STT</th>
+            <th className="text-center py-2">Order</th>
             <th className="text-center py-2">Thumb</th>
-            <th className="text-center py-2">Tên SP</th>
-            <th className="text-center py-2">Thương Hiệu</th>
-            <th className="text-center py-2">Danh Mục</th>
-            <th className="text-center py-2">Giá</th>
-            <th className="text-center py-2">Số Lượng</th>
-            <th className="text-center py-2">Đã Bán</th>
-            <th className="text-center py-2">Màu Sắc</th>
-            <th className="text-center py-2">Đánh Giá</th>
-            <th className="text-center py-2">Thay Đổi</th>
-            <th className="text-center py-2">Được tạo</th>
+            <th className="text-center py-2">Title</th>
+            <th className="text-center py-2">Brand</th>
+            <th className="text-center py-2">Category</th>
+            <th className="text-center py-2">Price</th>
+            <th className="text-center py-2">Quantity</th>
+            <th className="text-center py-2">Sold</th>
+            <th className="text-center py-2">Color</th>
+            <th className="text-center py-2">Ratings</th>
+            <th className="text-center py-2">Varriants</th>
+            <th className="text-center py-2">UpdatedAt</th>
             <th className="text-center py-2">Actions</th>
           </tr>
         </thead>

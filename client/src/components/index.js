@@ -38,4 +38,3 @@ export { default as MemberSidebar } from "./sidebar/MemberSidebar"
 export { default as InputForm } from "./inputs/InputForm"
 export { default as Select } from "./inputs/Select"
 export { default as MarkdownEditor } from "./inputs/MarkdownEditor"
-export { default as ChartSection } from './chart/ChartSection'

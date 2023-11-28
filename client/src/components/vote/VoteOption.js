@@ -24,7 +24,7 @@ const VoteOption = ({ nameProduct, handleSubmitVoteOption }) => {
                 onChange={e => setComment(e.target.value)}
             ></textarea>
             <div className='w-full flex flex-col gap-4'>
-                <p>Bạn có thích sản phẩm này?</p>
+                <p>How do you like this product?</p>
                 <div className='flex justify-center gap-4 items-center'>
                     {voteOptions.map(el => (
                         <div
@@ -44,7 +44,7 @@ const VoteOption = ({ nameProduct, handleSubmitVoteOption }) => {
                 handleOnClick={() => handleSubmitVoteOption({ comment, score })}
                 fw
             >
-                Đánh giá
+                Submit
             </Button>
         </div>
     )

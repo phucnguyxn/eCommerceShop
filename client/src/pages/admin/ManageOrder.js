@@ -2,7 +2,7 @@ import React from 'react'
 
 const ManageOrder = () => {
     return (
-        <div>Quản lý đơn hàng</div>
+        <div>ManageOrder</div>
     )
 }
 
