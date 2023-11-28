@@ -4,12 +4,12 @@ import icons from "./icons"
 export const navigation = [
   {
     id: 1,
-    value: "HOME",
+    value: "TRANG CHỦ",
     path: `/${path.HOME}`,
   },
   {
     id: 2,
-    value: "PRODUCTS",
+    value: "SẢN PHẨM",
     path: `/${path.PRODUCTS}`,
   },
   {
@@ -19,7 +19,7 @@ export const navigation = [
   },
   {
     id: 4,
-    value: "OUR SERVICES",
+    value: "DỊCH VỤ",
     path: `/${path.OUR_SERVICES}`,
   },
   {

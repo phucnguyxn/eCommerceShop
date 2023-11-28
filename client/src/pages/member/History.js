@@ -73,9 +73,9 @@ const History = ({ navigate, location }) => {
         <thead>
           <tr className="border bg-sky-900 text-white border-white">
             <th className="text-center py-2">#</th>
-            <th className="text-center py-2">Products</th>
-            <th className="text-center py-2">Total</th>
-            <th className="text-center py-2">Status</th>
+            <th className="text-center py-2">Sản phẩm</th>
+            <th className="text-center py-2">Thành tiền</th>
+            <th className="text-center py-2">Trạng thái</th>
             <th className="text-center py-2">Created At</th>
           </tr>
         </thead>

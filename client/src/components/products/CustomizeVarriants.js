@@ -153,7 +153,7 @@ const CustomizeVarriants = ({ customizeVarriant, setCustomizeVarriant, render })
                         </div>
                     ))}
                 </div>}
-                <div className='my-6'><Button type='submit'>Add varriant</Button></div>
+                <div className='my-6'><Button type='submit'>Thêm thay đổi</Button></div>
             </form>
         </div>
     )

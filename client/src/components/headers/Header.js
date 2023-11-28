@@ -38,14 +38,14 @@ const Header = ({ dispatch }) => {
                         <RiPhoneFill color='red' />
                         <span className='font-semibold'>(+1800) 000 8808</span>
                     </span>
-                    <span>Mon-Sat 9:00AM - 8:00PM</span>
+                    <span>Thứ Hai - Chủ Nhật 9:00AM - 8:00PM</span>
                 </div>
                 <div className='flex flex-col items-center px-6 border-r'>
                     <span className='flex gap-4 items-center'>
                         <MdEmail color='red' />
-                        <span className='font-semibold'>SUPPORT@TADATHEMES.COM</span>
+                        <span className='font-semibold'>DIGIHOLIC@GMAIL.COM</span>
                     </span>
-                    <span>Online Support 24/7</span>
+                    <span>HỖ TRỢ 24/7</span>
                 </div>
                 {current && <Fragment>
                     <div onClick={() => dispatch(showCart())} className='cursor-pointer flex items-center justify-center gap-2 px-6 border-r'>
