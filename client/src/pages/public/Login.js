@@ -135,12 +135,12 @@ const Login = () => {
             />
             <div className="flex items-center justify-end w-full gap-4">
               <Button
-                name="Gửi"
+                name="Submit"
                 handleOnClick={handleForgotPassword}
                 style="px-4 py-2 rounded-md text-white bg-blue-500 text-semibold my-2"
               />
               <Button
-                name="Quay lại"
+                name="Back"
                 handleOnClick={() => setIsForgotPassword(false)}
               />
             </div>
@@ -155,21 +155,21 @@ const Login = () => {
       <div className="absolute top-0 bottom-0 left-0 right-1/2 items-center justify-center flex">
         <div className="p-8 bg-white flex flex-col items-center rounded-md min-w-[500px]">
           <h1 className="text-[28px] font-semibold text-main mb-8">
-            {isRegister ? "ĐĂNG KÝ" : "ĐĂNG NHẬP"}
+            {isRegister ? "Register" : "Login"}
           </h1>
           {isRegister && (
             <div className="flex items-center gap-2">
               <InputField
                 value={payload.firstname}
                 setValue={setPayload}
-                nameKey="Họ"
+                nameKey="firstname"
                 invalidFields={invalidFields}
                 setInvalidFieds={setInvalidFields}
               />
               <InputField
                 value={payload.lastname}
                 setValue={setPayload}
-                nameKey="Tên"
+                nameKey="lastname"
                 invalidFields={invalidFields}
                 setInvalidFieds={setInvalidFields}
               />
@@ -178,7 +178,7 @@ const Login = () => {
           <InputField
             value={payload.email}
             setValue={setPayload}
-            nameKey="Email"
+            nameKey="email"
             invalidFields={invalidFields}
             setInvalidFieds={setInvalidFields}
             fullWidth
@@ -187,7 +187,7 @@ const Login = () => {
             <InputField
               value={payload.mobile}
               setValue={setPayload}
-              nameKey="Số điện thoại"
+              nameKey="mobile"
               invalidFields={invalidFields}
               setInvalidFieds={setInvalidFields}
               fullWidth
@@ -196,14 +196,14 @@ const Login = () => {
           <InputField
             value={payload.password}
             setValue={setPayload}
-            nameKey="Mật khẩu"
+            nameKey="password"
             type="password"
             invalidFields={invalidFields}
             setInvalidFieds={setInvalidFields}
             fullWidth
           />
           <Button handleOnClick={handleSubmit} fw>
-            {isRegister ? "ĐĂNG KÝ" : "ĐĂNG NHẬP"}
+            {isRegister ? "Register" : "Login"}
           </Button>
           <div className="flex items-center justify-between my-2 w-full text-sm">
             {!isRegister && (
