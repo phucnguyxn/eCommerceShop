@@ -1,7 +1,7 @@
 import React, { useState, useEffect, memo } from "react"
 import { apiGetProducts } from "apis/product"
 import { CustomSlider } from "components"
-import { getNewProducts } from "store/products/asynsActions"
+import { getNewProducts } from "store/products/asyncActions"
 import { useDispatch, useSelector } from "react-redux"
 import clsx from "clsx"
 
@@ -39,9 +39,8 @@ const BestSeller = () => {
         {tabs.map((el) => (
           <span
             key={el.id}
-            className={`font-semibold uppercase px-8 border-r cursor-pointer text-gray-400 ${
-              activedTab === el.id ? "text-gray-900" : ""
-            }`}
+            className={`font-semibold uppercase px-8 border-r cursor-pointer text-gray-400 ${activedTab === el.id ? "text-gray-900" : ""
+              }`}
             onClick={() => setActivedTab(el.id)}
           >
             {el.name}

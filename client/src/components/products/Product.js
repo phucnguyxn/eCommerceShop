@@ -6,7 +6,7 @@ import { renderStarFromNumber } from "ultils/helpers"
 import { SelectOption } from "components"
 import icons from "ultils/icons"
 import withBaseComponent from "hocs/withBaseComponent"
-import { showModal } from "store/app/appSlice"
+import { showModal } from "store/categories/categorySlice"
 import { DetailProduct } from "pages/public"
 import { apiUpdateCart, apiUpdateWishlist } from "apis"
 import { toast } from "react-toastify"
@@ -92,8 +92,7 @@ const Product = ({
         className="w-full border p-[15px] flex flex-col items-center"
         onClick={(e) =>
           navigate(
-            `/${productData?.category?.toLowerCase()}/${productData?._id}/${
-              productData?.title
+            `/${productData?.category?.toLowerCase()}/${productData?._id}/${productData?.title
             }`
           )
         }

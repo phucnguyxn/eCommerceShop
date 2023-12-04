@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form'
 import { validate, getBase64 } from 'ultils/helpers'
 import { toast } from 'react-toastify'
 import { apiUpdateProduct } from 'apis'
-import { showModal } from 'store/app/appSlice'
+import { showModal } from 'store/categories/categorySlice'
 import { useSelector, useDispatch } from 'react-redux'
 
 const UpdateProduct = ({ editProduct, render, setEditProduct }) => {

@@ -13,6 +13,8 @@ const path = {
     DETAIL_CART: 'my-cart',
     CHECKOUT: 'checkout',
     PRODUCTS: 'products',
+    CATEGORIES: 'categories',
+    BRANDS: 'brands',
 
 
     // Admin
@@ -21,7 +23,11 @@ const path = {
     MANAGE_USER: 'manage-user',
     MANAGE_PRODUCTS: 'manage-products',
     MANAGE_ORDER: 'manage-order',
+    MANAGE_BRANDS: 'manage-brands',
+    MANAGE_CATEGORIES:'manage-categories',
     CREATE_PRODUCTS: 'create-products',
+    CREATE_CATEGORIES: 'create-categories',
+    CREATE_BRANDS: 'create-brands',
 
     // Member
     MEMBER: 'member',

@@ -2,10 +2,10 @@ import React, { useCallback, useState, useEffect } from "react";
 import { InputForm, Select, Button, MarkdownEditor, Loading } from "components";
 import { useForm } from "react-hook-form";
 import { useSelector, useDispatch } from "react-redux";
-import { validate, getBase64 } from "ultils/helpers";
+import { getBase64 } from "ultils/helpers";
 import { toast } from "react-toastify";
 import { apiCreateProduct } from "apis";
-import { showModal } from "store/app/appSlice";
+import { showModal } from "store/categories/categorySlice";
 
 const CreateProducts = () => {
   const { categories } = useSelector((state) => state.app);
@@ -57,7 +57,6 @@ const CreateProducts = () => {
   }, [watch("images")]);
 
   const handleCreateProduct = async (data) => {
-    // const invalids = validate(payload, setInvalidFields)
     const invalids = 0;
     if (invalids === 0) {
       if (data.category)
@@ -154,7 +153,7 @@ const CreateProducts = () => {
               fullWidth
             />
             <Select
-              label="Brand (Optional)"
+              label="Brand"
               options={categories
                 ?.find((el) => el._id === watch("category"))
                 ?.brand?.map((el) => ({ code: el, value: el }))}

@@ -6,7 +6,7 @@ import React, { memo, useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { useDispatch } from 'react-redux'
 import { toast } from 'react-toastify'
-import { showModal } from 'store/app/appSlice'
+import { showModal } from 'store/categories/categorySlice'
 import Swal from 'sweetalert2'
 import { getBase64 } from 'ultils/helpers'
 

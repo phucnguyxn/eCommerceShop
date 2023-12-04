@@ -10,7 +10,7 @@ import Swal from "sweetalert2";
 import { useNavigate, Link, useSearchParams } from "react-router-dom";
 import path from "ultils/path";
 import { login } from "store/user/userSlice";
-import { showModal } from "store/app/appSlice";
+import { showModal } from "store/categories/categorySlice";
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 import { validate } from "ultils/helpers";

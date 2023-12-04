@@ -71,27 +71,5 @@
   "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTVjMWFjODI5OGNiOWE5YmUxZDg2MDQiLCJpYXQiOjE3MDA3MzEzNTAsImV4cCI6MTcwMTMzNjE1MH0.5VHOnJFIEL4-AJ4z7JcK_QoGhi_LzCpKsgikRBNJ2c4",
   "address": "123 Nguyen Tri Phuong, Da Nang, Viet Nam",
   "avatar": "https://res.cloudinary.com/dteq1b1ce/image/upload/v1700535209/cuahangdientu/dclkks4o0ebi7r5eu5vy.png"
-},
-{
-  "_id": {
-    "$oid": "655ef517ea299037f22375f9"
-  },
-  "firstname": "tran",
-  "lastname": "minh",
-  "email": "mita123@gmail.com",
-  "mobile": "0723517581",
-  "password": "$2b$10$BexZR1ZzU/9ePzzrRVtN6.pTXV.JHKRkl0eYgwvtwtb3mqabWM9j6",
-  "role": "1979",
-  "wishlist": [],
-  "isBlocked": false,
-  "cart": [],
-  "createdAt": {
-    "$date": "2023-11-23T06:45:43.247Z"
-  },
-  "updatedAt": {
-    "$date": "2023-11-23T09:23:05.372Z"
-  },
-  "__v": 0,
-  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTVlZjUxN2VhMjk5MDM3ZjIyMzc1ZjkiLCJpYXQiOjE3MDA3MzEzODUsImV4cCI6MTcwMTMzNjE4NX0.1NEmBCpfWr36t5FAJeWZUq1buv4xXS3dWuDuZaz-YJ8",
-  "address": "pham nhu xuong da nang"
-}]
+}
+]

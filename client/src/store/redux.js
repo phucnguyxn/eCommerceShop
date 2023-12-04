@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit"
-import appSlice from "./app/appSlice"
+import appSlice from "./categories/categorySlice"
 import productSlice from "./products/productSlice"
 import userSlice from "./user/userSlice"
 import storage from "redux-persist/lib/storage"

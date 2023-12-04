@@ -17,8 +17,12 @@ import {
   AdminLayout,
   ManageOrder,
   ManageProducts,
+  ManageCategories,
+  ManageBrands,
   ManageUser,
   CreateProducts,
+  CreateCategories,
+  CreateBrands,
   Dashboard,
 } from "pages/admin"
 import {
@@ -30,12 +34,12 @@ import {
   Checkout,
 } from "pages/member"
 import path from "ultils/path"
-import { getCategories } from "store/app/asyncActions"
+import { getCategories } from "store/categories/asyncActions"
 import { useDispatch, useSelector } from "react-redux"
 import { ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 import { Cart, Modal } from "components"
-import { showCart } from "store/app/appSlice"
+import { showCart } from "store/categories/categorySlice"
 
 function App() {
   const dispatch = useDispatch()
@@ -75,8 +79,13 @@ function App() {
           <Route path={path.DASHBOARD} element={<Dashboard />} />
           <Route path={path.MANAGE_ORDER} element={<ManageOrder />} />
           <Route path={path.MANAGE_PRODUCTS} element={<ManageProducts />} />
+          <Route path={path.MANAGE_CATEGORIES} element={<ManageCategories />} />
+          <Route path={path.MANAGE_BRANDS} element={<ManageBrands />} />
           <Route path={path.MANAGE_USER} element={<ManageUser />} />
           <Route path={path.CREATE_PRODUCTS} element={<CreateProducts />} />
+          <Route path={path.CREATE_CATEGORIES} element={<CreateCategories />} />
+          <Route path={path.CREATE_BRANDS} element={<CreateBrands />} />
+
         </Route>
         <Route path={path.MEMBER} element={<MemberLayout />}>
           <Route path={path.PERSONAL} element={<Personal />} />

@@ -27,6 +27,16 @@ export const navigation = [
     value: "FAQs",
     path: `/${path.FAQ}`,
   },
+  {
+    id: 6,
+    value: "Category",
+    path: `/${path.CATEGORIES}`
+  },
+  {
+    id: 7,
+    value: "Brand",
+    path: `/${path.BRANDS}`
+  }
 ]
 const { RiTruckFill, BsShieldShaded, BsReplyFill, FaTty, AiFillGift } = icons
 export const productExtraInfomation = [
@@ -217,6 +227,38 @@ export const adminSidebar = [
   },
   {
     id: 4,
+    type: "PARENT",
+    text: "Manage category",
+    icon: <TbBrandProducthunt size={20} />,
+    submenu: [
+      {
+        text: "Create category",
+        path: `/${path.ADMIN}/${path.CREATE_CATEGORIES}`,
+      },
+      {
+        text: "Manage category",
+        path: `/${path.ADMIN}/${path.MANAGE_CATEGORIES}`,
+      },
+    ]
+  },
+  {
+    id: 5,
+    type: "PARENT",
+    text: "Manage brand",
+    icon: <TbBrandProducthunt size={20} />,
+    submenu: [
+      {
+        text: "Create brand",
+        path: `/${path.ADMIN}/${path.CREATE_BRANDS}`,
+      },
+      {
+        text: "Manage brand",
+        path: `/${path.ADMIN}/${path.MANAGE_BRANDS}`,
+      },
+    ]
+  },
+  {
+    id: 6,
     type: "SINGLE",
     text: "Manage orders",
     path: `/${path.ADMIN}/${path.MANAGE_ORDER}`,

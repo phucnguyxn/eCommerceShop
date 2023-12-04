@@ -6,7 +6,7 @@ import path from 'ultils/path'
 import { useDispatch, useSelector } from 'react-redux'
 import { logout } from 'store/user/userSlice'
 import withBaseComponent from 'hocs/withBaseComponent'
-import { showCart } from 'store/app/appSlice'
+import { showCart } from 'store/categories/categorySlice'
 
 
 

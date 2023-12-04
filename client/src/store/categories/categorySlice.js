@@ -2,8 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 import * as actions from './asyncActions'
 
 
-export const appSlice = createSlice({
-    name: 'app',
+export const categorySlice = createSlice({
+    name: 'category',
     initialState: {
         categories: null,
         isLoading: false,
@@ -34,6 +34,6 @@ export const appSlice = createSlice({
         });
     }
 })
-export const { showModal, showCart } = appSlice.actions
+export const { showModal, showCart } = categorySlice.actions
 
-export default appSlice.reducer
+export default categorySlice.reducer
