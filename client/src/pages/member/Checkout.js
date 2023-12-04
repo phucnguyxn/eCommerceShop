@@ -19,15 +19,15 @@ const Checkout = ({ dispatch, navigate }) => {
                 <img src={payment} alt="payment" className='h-[70%] object-contain' />
             </div>
             <div className='flex w-full flex-col justify-center col-span-6 gap-6'>
-                <h2 className='text-3xl mb-6 font-bold'>Checkout your order</h2>
+                <h2 className='text-3xl mb-6 font-bold'>Kiểm tra đơn hàng của bạn</h2>
                 <div className='flex w-full gap-6'>
                     <div className='flex-1'>
                         <table className='table-auto h-fit'>
                             <thead>
                                 <tr className='border bg-gray-200'>
-                                    <th className='p-2 text-left'>Products</th>
-                                    <th className='text-center p-2'>Quantity</th>
-                                    <th className='text-right p-2'>Price</th>
+                                    <th className='p-2 text-left'>Sản phẩm</th>
+                                    <th className='text-center p-2'>Số lượng</th>
+                                    <th className='text-right p-2'>Giá</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -42,11 +42,11 @@ const Checkout = ({ dispatch, navigate }) => {
                     <div className='flex-1 flex flex-col justify-between gap-[45px]'>
                         <div className='flex flex-col gap-6'>
                             <span className='flex items-center gap-8 text-sm'>
-                                <span className='font-medium'>Subtotal:</span>
+                                <span className='font-medium'>Tổng tiền:</span>
                                 <span className='text-main font-bold'>{`${formatMoney(currentCart?.reduce((sum, el) => +el?.price * el.quantity + sum, 0))} VND`}</span>
                             </span>
                             <span className='flex items-center gap-8 text-sm'>
-                                <span className='font-medium'>Address:</span>
+                                <span className='font-medium'>Địa chỉ:</span>
                                 <span className='text-main font-bold'>{current?.address}</span>
                             </span>
                         </div>

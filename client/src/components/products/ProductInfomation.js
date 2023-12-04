@@ -83,10 +83,10 @@ const ProductInfomation = ({ totalRatings, ratings, nameProduct, pid, rerender }
                     </div>
                 </div>
                 <div className='p-4 flex items-center justify-center text-sm flex-col gap-2'>
-                    <span>Do you review this product?</span>
+                    <span>Bạn có đánh giá sản phẩm này không?</span>
                     <Button handleOnClick={handleVoteNow}
                     >
-                        Vote now!
+                        Đánh giá bây giờ!
                     </Button>
                 </div>
                 <div className='flex flex-col gap-4'>

@@ -6,8 +6,8 @@ import { useDispatch, useSelector } from "react-redux"
 import clsx from "clsx"
 
 const tabs = [
-  { id: 1, name: "best sellers" },
-  { id: 2, name: "new arrivals" },
+  { id: 1, name: "SẢN PHẨM BÁN CHẠY" },
+  { id: 2, name: "SẢN PHẨM MỚI" },
 ]
 
 const BestSeller = () => {

@@ -102,8 +102,8 @@ const Login = () => {
         <div className="absolute top-0 left-0 right-0 bottom-0 bg-overlay z-50 flex flex-col justify-center items-center">
           <div className="bg-white w-[500px] rounded-md p-8">
             <h4 className="">
-              We sent a code to your mail. Please check your mail and enter your
-              code:
+            Chúng tôi đã gửi mã tới thư của bạn. Vui lòng kiểm tra thư và nhập thông tin của bạn
+              mã số:
             </h4>
             <input
               type="text"
@@ -116,7 +116,7 @@ const Login = () => {
               className="px-4 py-2 bg-blue-500 font-semibold text-white rounded-md ml-4"
               onClick={finalRegister}
             >
-              Submit
+              Gửi
             </button>
           </div>
         </div>
@@ -124,7 +124,7 @@ const Login = () => {
       {isForgotPassword && (
         <div className="absolute animate-slide-right top-0 left-0 bottom-0 right-0 bg-white flex flex-col items-center py-8 z-50">
           <div className="flex flex-col gap-4">
-            <label htmlFor="email">Enter your email:</label>
+            <label htmlFor="email">Nhập email của bạn:</label>
             <input
               type="text"
               id="email"
@@ -211,7 +211,7 @@ const Login = () => {
                 onClick={() => setIsForgotPassword(true)}
                 className="text-blue-500 hover:underline cursor-pointer"
               >
-                Forgot your account?
+                Quên mật khẩu?
               </span>
             )}
             {!isRegister && (
@@ -219,7 +219,7 @@ const Login = () => {
                 className="text-blue-500 hover:underline cursor-pointer"
                 onClick={() => setIsRegister(true)}
               >
-                Create account
+                Đăng ký
               </span>
             )}
             {isRegister && (
@@ -227,7 +227,7 @@ const Login = () => {
                 className="text-blue-500 hover:underline cursor-pointer w-full text-center"
                 onClick={() => setIsRegister(false)}
               >
-                Go login
+                Đăng nhập
               </span>
             )}
           </div>
@@ -235,7 +235,7 @@ const Login = () => {
             className="text-blue-500 text-sm hover:underline cursor-pointer"
             to={`/${path.HOME}`}
           >
-            Go home?
+            Tới trang chủ?
           </Link>
         </div>
       </div>
