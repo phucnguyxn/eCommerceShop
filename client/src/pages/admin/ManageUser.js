@@ -67,7 +67,7 @@ const ManageUser = () => {
     return (
         <div className={clsx('w-full', editElm && 'pl-16')}>
             <h1 className='h-[75px] flex justify-between items-center text-3xl font-bold px-4 border-b'>
-                <span>Manage users</span>
+                <span>Quản lý người dùng</span>
             </h1>
             <div className='w-full p-4'>
                 <div className='flex justify-end py-4'>
@@ -76,24 +76,24 @@ const ManageUser = () => {
                         value={queries.q}
                         setValue={setQueries}
                         style={'w500'}
-                        placeholder='Search name or mail user...'
+                        placeholder='Tìm kiếm tên hoặc email người dùng...'
                         isHideLabel
                     />
                 </div>
                 <form onSubmit={handleSubmit(handleUpdate)}>
-                    {editElm && <Button type='submit'>Update</Button>}
+                    {editElm && <Button type='submit'>Cập nhật</Button>}
                     <table className='table-auto mb-6 text-left w-full'>
                         <thead className='font-bold bg-gray-700 text-[13px] text-white'>
                             <tr className='border border-gray-500'>
                                 <th className='px-4 py-2'>#</th>
-                                <th className='px-4 py-2'>Email address</th>
-                                <th className='px-4 py-2'>Firstname</th>
-                                <th className='px-4 py-2'>Lastname</th>
+                                <th className='px-4 py-2'>Email </th>
+                                <th className='px-4 py-2'>Họ</th>
+                                <th className='px-4 py-2'>Tên</th>
                                 <th className='px-4 py-2'>Role</th>
-                                <th className='px-4 py-2'>Phone</th>
-                                <th className='px-4 py-2'>Status</th>
-                                <th className='px-4 py-2'>Created At</th>
-                                <th className='px-4 py-2'>Actions</th>
+                                <th className='px-4 py-2'>Số điện thoại</th>
+                                <th className='px-4 py-2'>Trạng thái</th>
+                                <th className='px-4 py-2'>Ngày tạo</th>
+                                <th className='px-4 py-2'>Chọn</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -112,7 +112,7 @@ const ManageUser = () => {
                                                     required: 'Require fill.',
                                                     pattern: {
                                                         value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                                                        message: "Invalid email address"
+                                                        message: "Email không hợp lệ!"
                                                     }
                                                 }}
                                             />
@@ -126,7 +126,7 @@ const ManageUser = () => {
                                                 errors={errors}
                                                 defaultValue={editElm?.firstname}
                                                 id={'firstname'}
-                                                validate={{ required: 'Require fill.' }}
+                                                validate={{ required: 'Không được để trống!' }}
                                             />
                                             : <span>{el.firstname}</span>}
                                     </td>
@@ -138,7 +138,7 @@ const ManageUser = () => {
                                                 errors={errors}
                                                 defaultValue={editElm?.lastname}
                                                 id={'lastname'}
-                                                validate={{ required: 'Require fill.' }}
+                                                validate={{ required: 'Không được để trống!' }}
                                             />
                                             : <span>{el.lastname}</span>}
                                     </td>
@@ -150,7 +150,7 @@ const ManageUser = () => {
                                                 errors={errors}
                                                 defaultValue={+el.role}
                                                 id={'role'}
-                                                validate={{ required: 'Require fill.' }}
+                                                validate={{ required: 'Không được để trống!' }}
                                                 options={roles}
                                             />
                                             : <span>{roles.find(role => +role.code === +el.role)?.value}
@@ -164,10 +164,10 @@ const ManageUser = () => {
                                                 defaultValue={editElm?.mobile}
                                                 id={'mobile'}
                                                 validate={{
-                                                    required: 'Require fill.',
+                                                    required: 'Không được để trống!',
                                                     pattern: {
                                                         value: /^[62|0]+\d{9}/gi,
-                                                        message: "Invalid phone number"
+                                                        message: "Số điện thoại không hợp lệ!"
                                                     }
                                                 }}
                                             />
@@ -181,16 +181,16 @@ const ManageUser = () => {
                                                 errors={errors}
                                                 defaultValue={el.isBlocked}
                                                 id={'isBlocked'}
-                                                validate={{ required: 'Require fill.' }}
+                                                validate={{ required: 'Không được để trống!' }}
                                                 options={blockStatus}
                                             />
                                             : <span>{el.isBlocked ? 'Blocked' : 'Active'}</span>}
                                     </td>
                                     <td className='py-2 px-4'>{moment(el.createdAt).format('DD/MM/YYYY')}</td>
                                     <td className='py-2 px-4'>
-                                        {editElm?._id === el._id ? <span onClick={() => setEditElm(null)} className='px-2 text-orange-600 hover:underline cursor-pointer'>Back</span>
-                                            : <span onClick={() => setEditElm(el)} className='px-2 text-orange-600 hover:underline cursor-pointer'>Edit</span>}
-                                        <span onClick={() => handleDeleteUser(el._id)} className='px-2 text-orange-600 hover:underline cursor-pointer'>Delete</span>
+                                        {editElm?._id === el._id ? <span onClick={() => setEditElm(null)} className='px-2 text-orange-600 hover:underline cursor-pointer'>Quay lại</span>
+                                            : <span onClick={() => setEditElm(el)} className='px-2 text-orange-600 hover:underline cursor-pointer'>Chỉnh sửa</span>}
+                                        <span onClick={() => handleDeleteUser(el._id)} className='px-2 text-orange-600 hover:underline cursor-pointer'>Xóa</span>
                                     </td>
                                 </tr>
                             ))}

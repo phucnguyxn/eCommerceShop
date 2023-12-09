@@ -49,12 +49,12 @@ const UpdateCategory = ({ editCategory, render, setEditCategory }) => {
                         errors={errors}
                         id='title'
                         validate={{
-                            required: 'Need fill this field'
+                            required: 'Cần điền thông tin vào trường này'
                         }}
                         fullWidth
                         placeholder='Name of new category'
                     />
-                    <div className='my-6'><Button type='submit'>Update new category</Button></div>
+                    <div className='my-6'><Button type='submit'>Cập nhật danh mục mới</Button></div>
                 </form>
             </div>
         </div>
