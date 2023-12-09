@@ -38,23 +38,23 @@ const UpdateCategory = ({ editCategory, render, setEditCategory }) => {
         <div className='w-full flex flex-col gap-4 relative'>
             <div className='h-[69px] w-full'></div>
             <div className='p-4 border-b bg-gray-100 flex justify-between items-center right-0 left-[327px] fixed top-0'>
-                <h1 className='text-3xl font-bold tracking-tight'>Update categories</h1>
-                <span className='text-main hover:underline cursor-pointer' onClick={() => setEditCategory(null)} >Cancel</span>
+                <h1 className='text-3xl font-bold tracking-tight'>Cập nhật danh mục</h1>
+                <span className='text-main hover:underline cursor-pointer' onClick={() => setEditCategory(null)} >Hủy</span>
             </div>
             <div className='p-4'>
                 <form onSubmit={handleSubmit(handleUpdateCategory)}>
                     <InputForm
-                        label='Name category'
+                        label='Tên danh mục'
                         register={register}
                         errors={errors}
                         id='title'
                         validate={{
-                            required: 'Cần điền thông tin vào trường này'
+                            required: 'Không được để trống'
                         }}
                         fullWidth
-                        placeholder='Name of new category'
+                        placeholder='Tên danh mục'
                     />
-                    <div className='my-6'><Button type='submit'>Cập nhật danh mục mới</Button></div>
+                    <div className='my-6'><Button type='submit'>Cập nhật</Button></div>
                 </form>
             </div>
         </div>

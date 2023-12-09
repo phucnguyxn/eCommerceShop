@@ -92,7 +92,7 @@ const ManageCategories = () => {
             )}
             <div className="h-[69px] w-full"></div>
             <div className="p-4 border-b w-full bg-gray-100 flex justify-between items-center fixed top-0">
-                <h1 className="text-3xl font-bold tracking-tight">Manage categories</h1>
+                <h1 className="text-3xl font-bold tracking-tight">Quản lý danh mục</h1>
             </div>
             <div className="flex justify-end items-center px-4">
                 <form className="w-[45%]">
@@ -108,10 +108,10 @@ const ManageCategories = () => {
             <table className="table-auto">
                 <thead>
                     <tr className="border bg-sky-900 text-white border-white">
-                        <th className="text-center py-2">Title</th>
-                        <th className="text-center py-2">Brand</th>
-                        <th className="text-center py-2">CreatedAt</th>
-                        <th className="text-center py-2">UpdatedAt</th>
+                        <th className="text-center py-2">Tiêu đề</th>
+                        <th className="text-center py-2">Danh mục</th>
+                        <th className="text-center py-2">Đã tạo lúc</th>
+                        <th className="text-center py-2">Cập nhật lúc</th>
                     </tr>
                 </thead>
                 <tbody>

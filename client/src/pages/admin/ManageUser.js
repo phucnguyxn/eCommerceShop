@@ -189,7 +189,7 @@ const ManageUser = () => {
                                     <td className='py-2 px-4'>{moment(el.createdAt).format('DD/MM/YYYY')}</td>
                                     <td className='py-2 px-4'>
                                         {editElm?._id === el._id ? <span onClick={() => setEditElm(null)} className='px-2 text-orange-600 hover:underline cursor-pointer'>Quay lại</span>
-                                            : <span onClick={() => setEditElm(el)} className='px-2 text-orange-600 hover:underline cursor-pointer'>Chỉnh sửa</span>}
+                                            : <span onClick={() => setEditElm(el)} className='px-2 text-orange-600 hover:underline cursor-pointer'>Cập nhật</span>}
                                         <span onClick={() => handleDeleteUser(el._id)} className='px-2 text-orange-600 hover:underline cursor-pointer'>Xóa</span>
                                     </td>
                                 </tr>

@@ -40,21 +40,21 @@ const UpdateBrand = ({ editBrand, render, setEditBrand }) => {
         <div className='w-full flex flex-col gap-4 relative'>
             <div className='h-[69px] w-full'></div>
             <div className='p-4 border-b bg-gray-100 flex justify-between items-center right-0 left-[327px] fixed top-0'>
-                <h1 className='text-3xl font-bold tracking-tight'>Update brands</h1>
-                <span className='text-main hover:underline cursor-pointer' onClick={() => setEditBrand(null)} >Cancel</span>
+                <h1 className='text-3xl font-bold tracking-tight'>Cập nhật brands</h1>
+                <span className='text-main hover:underline cursor-pointer' onClick={() => setEditBrand(null)} >Hủy</span>
             </div>
             <div className='p-4'>
                 <form onSubmit={handleSubmit(handleUpdateBrand)}>
                     <InputForm
-                        label='Name brand'
+                        label='Tên brand'
                         register={register}
                         errors={errors}
                         id='title'
                         validate={{
-                            required: 'Need fill this field'
+                            required: 'Không được để trống'
                         }}
                         fullWidth
-                        placeholder='Name of new brand'
+                        placeholder='Tên brand'
                     />
                     <div className='w-full my-6 flex gap-4'>
                         <Select
@@ -67,7 +67,7 @@ const UpdateBrand = ({ editBrand, render, setEditBrand }) => {
                             fullWidth
                         />
                     </div>
-                    <div className='my-6'><Button type='submit'>Update new brand</Button></div>
+                    <div className='my-6'><Button type='submit'>Cập nhật</Button></div>
                 </form>
             </div>
         </div>
