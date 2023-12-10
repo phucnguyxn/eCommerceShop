@@ -20,8 +20,9 @@
 
 <h2>Bước 3</h2> 
 <p>Mở file .env.example trong thư mục server, sau đó copy toàn bộ, tạo 1 file .env sau đó paste vào.</p>
-<img src="https://github.com/phucnguyxn/eCommerceShop/assets/118291240/e10b9c0e-61ef-4b5a-ba0e-897934c34618" />
-<img src="https://github.com/phucnguyxn/eCommerceShop/assets/118291240/37ca50ca-4370-449f-ab7a-a70a51edd1ec" />
+<img src="[https://github.com/phucnguyxn/eCommerceShop/assets/118291240/e10b9c0e-61ef-4b5a-ba0e-897934c34618](https://github.com/phucnguyxn/eCommerceShop/assets/76876030/12bc4b20-f87f-4f18-92b2-3de896fab4ec)" />
+<img width="938" alt="image" src="https://github.com/phucnguyxn/eCommerceShop/assets/76876030/71d90d08-8339-49ee-9ed9-950d51470a99">
+
 
 <h2>Bước 4</h2>
 <p>Tạo 1 tài khoản Cloudinary và Mailtrap:</p>
@@ -57,11 +58,11 @@ Copy URI paste vào file .env
 
 
 <h2>Bước 9: Run application</h2>
-<p> Ở terminal server, run lệnh `pnpm dev` để chạy server</p>
-<img src="" alt="pnpm dev"/>
+<p> Ở terminal server, run lệnh `pnpm dev` để chạy server port 5000</p>
+<img width="1143" alt="image" src="https://github.com/phucnguyxn/eCommerceShop/assets/76876030/6aad899f-3086-46bb-8787-6f5a00b7e023">
 <hr />
-<p> Ở terminal client, lệnh `pnpm start` để view UI</p>
-<img src="" alt="pnpm start"/>
+<p> Ở terminal client, lệnh `pnpm start` để view UI port 4321</p>
+<img width="1015" alt="image" src="https://github.com/phucnguyxn/eCommerceShop/assets/76876030/4c1b8e61-ff74-4fec-8a32-6786fba75d5b">
 
 
 <h2>Import data trong folder IMPORT</h2>
