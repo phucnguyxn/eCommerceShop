@@ -27,16 +27,16 @@ export const navigation = [
     value: "FAQs",
     path: `/${path.FAQ}`,
   },
-  {
-    id: 6,
-    value: "Category",
-    path: `/${path.CATEGORIES}`
-  },
-  {
-    id: 7,
-    value: "Brand",
-    path: `/${path.BRANDS}`
-  }
+  // {
+  //   id: 6,
+  //   value: "Category",
+  //   path: `/${path.CATEGORIES}`
+  // },
+  // {
+  //   id: 7,
+  //   value: "Brand",
+  //   path: `/${path.BRANDS}`
+  // }
 ]
 const { RiTruckFill, BsShieldShaded, BsReplyFill, FaTty, AiFillGift } = icons
 export const productExtraInfomation = [

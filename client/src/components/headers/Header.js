@@ -50,7 +50,7 @@ const Header = ({ dispatch }) => {
                 {current && <Fragment>
                     <div onClick={() => dispatch(showCart())} className='cursor-pointer flex items-center justify-center gap-2 px-6 border-r'>
                         <BsHandbagFill color='red' />
-                        <span>{`${current?.cart?.length || 0} item(s)`}</span>
+                        <span>{`${current?.cart?.length || 0} Sản phẩm`}</span>
                     </div>
                     <div
                         className='flex cursor-pointer items-center justify-center px-6 gap-2 relative'
