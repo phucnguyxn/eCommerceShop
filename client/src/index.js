@@ -5,8 +5,11 @@ import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react';
+import { Chart as ChartJS, Title, Tooltip, Legend } from 'chart.js';
 import { store, persistor } from './store/redux';
 import Application from './Application';
+
+ChartJS.register(Title, Tooltip, Legend);
 
 const container = document.getElementById('root');
 const root = createRoot(container);
