@@ -7,7 +7,7 @@ const Order = require('../models/order');
 const User = require('../models/user');
 const Brand = require('../models/brand');
 // import constants
-const { ENTITY_TYPE } = require('../config/constants');
+const { ENTITY_TYPE, SORT_DESC } = require('../config/constants');
 
 // listType should be an array
 const queryTotalEntities = async (type) => {
@@ -27,10 +27,11 @@ const queryTotalEntities = async (type) => {
   }
 };
 
-// listType should be an array
+// listType should be an array of types
 const queryTotalEntitiesByTypes = async (listTypes) =>
   Promise.all(map(listTypes, async (type) => await queryTotalEntities(type)));
 
+// example: [0, 1] will be converted to { totalProducts: 0, totalUsers: 1 }
 const formatOverviewNumberResponse = (data) => {
   const result = {};
   let index = 0;
@@ -60,4 +61,12 @@ const formatOverviewNumberResponse = (data) => {
   return result;
 };
 
-module.exports = { queryTotalEntitiesByTypes, formatOverviewNumberResponse };
+// limit should be number, default = LIMIT_BEST_SELLERS_COUNT (in config/constants)
+const queryBestSellingProducts = async (limit) =>
+  await Product.find().sort({ sold: SORT_DESC }).limit(limit).exec();
+
+module.exports = {
+  queryTotalEntitiesByTypes,
+  queryBestSellingProducts,
+  formatOverviewNumberResponse,
+};
