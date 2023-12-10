@@ -1,7 +1,7 @@
 import { InputForm, Select, Button, Loading } from 'components'
 import React, { memo, useState, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
-import { validate } from 'ultils/helpers'
+import { validate } from 'utils/helpers'
 import { toast } from 'react-toastify'
 import { apiUpdateBrand } from 'apis'
 import { showModal } from 'store/categories/categorySlice'

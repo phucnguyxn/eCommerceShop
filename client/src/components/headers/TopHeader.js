@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import path from 'ultils/path'
+import path from 'utils/path'
 import { getCurrent } from 'store/user/asyncActions'
 import { useSelector, useDispatch } from 'react-redux'
-import icons from 'ultils/icons'
+import icons from 'utils/icons'
 import { logout, clearMessage } from 'store/user/userSlice'
 import Swal from 'sweetalert2'
 
