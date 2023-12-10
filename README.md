@@ -21,6 +21,7 @@
 
 <h2>Bước 3</h2> 
 <p>Mở file .env.example trong thư mục server, sau đó copy toàn bộ, tạo 1 file .env sau đó paste vào.</p>
+<img width="1016" alt="image" src="https://github.com/phucnguyxn/eCommerceShop/assets/76876030/5f03c43b-f43f-4584-9afa-0bad89e76e07">
 <img src="[https://github.com/phucnguyxn/eCommerceShop/assets/118291240/e10b9c0e-61ef-4b5a-ba0e-897934c34618](https://github.com/phucnguyxn/eCommerceShop/assets/76876030/12bc4b20-f87f-4f18-92b2-3de896fab4ec)" />
 <img width="938" alt="image" src="https://github.com/phucnguyxn/eCommerceShop/assets/76876030/71d90d08-8339-49ee-9ed9-950d51470a99">
 
