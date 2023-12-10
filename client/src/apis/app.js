@@ -1,6 +1,7 @@
-import axios from '../axios'
+import useHttpRequest from 'hooks/useHttpRequest';
 
-export const apiGetCategories = () => axios({
+export const apiGetCategories = () =>
+  useHttpRequest({
     url: '/prodcategory/',
-    method: 'get'
-})
+    method: 'get',
+  });

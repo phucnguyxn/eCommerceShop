@@ -1,34 +1,34 @@
-import axios from "../axios"
+import useHttpRequest from 'hooks/useHttpRequest';
 
-export const apiGetBrands=(params)=>
-axios({
-    url:"/brand/",
-    method:"get",
+export const apiGetBrands = (params) =>
+  useHttpRequest({
+    url: '/brand/',
+    method: 'get',
     params,
-})
+  });
 
 export const apiGetBrand = (pid) =>
-  axios({
-    url: "/brand/" + pid,
-    method: "get",
-  })
+  useHttpRequest({
+    url: '/brand/' + pid,
+    method: 'get',
+  });
 
 export const apiCreateBrand = (data) =>
-  axios({
-    url: "/brand/",
-    method: "post",
+  useHttpRequest({
+    url: '/brand/',
+    method: 'post',
     data,
-  })
+  });
 
 export const apiUpdateBrand = (data, pid) =>
-  axios({
-    url: "/brand/" + pid,
-    method: "put",
+  useHttpRequest({
+    url: '/brand/' + pid,
+    method: 'put',
     data,
-  })
+  });
 
 export const apiDeleteBrand = (pid) =>
-  axios({
-    url: "/brand/" + pid,
-    method: "delete",
-  })
+  useHttpRequest({
+    url: '/brand/' + pid,
+    method: 'delete',
+  });

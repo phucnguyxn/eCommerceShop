@@ -8,7 +8,7 @@ import {
   CustomSlider,
 } from "../../components"
 import { useSelector } from "react-redux"
-import icons from "../../ultils/icons"
+import icons from "utils/icons"
 import withBaseComponent from "hocs/withBaseComponent"
 import { createSearchParams } from "react-router-dom"
 
@@ -85,7 +85,7 @@ const Home = ({ navigate }) => {
       </div>
       <div className="my-8 w-main m-auto">
         <h3 className="text-[20px] font-semibold py-[15px] border-b-2 border-main">
-            BÀI ĐĂNG TRÊN BLOG 
+            BÀI ĐĂNG TRÊN BLOG
         </h3>
       </div>
     </div>
