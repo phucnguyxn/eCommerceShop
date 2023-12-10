@@ -4,6 +4,7 @@
 <p>Gõ lệnh sau để cài pnpm ở phạm vi global -> `npm install -g pnpm`</>
 <hr />
 <i>Đợi cài thành công là xong, có thể dùng pnpm ngay, có thể test thử với lệnh `pnpm -v`</i>
+<img width="559" alt="image" src="https://github.com/phucnguyxn/eCommerceShop/assets/76876030/bfbae767-20bd-495a-b7f6-331525935652">
 <hr />
 
 
