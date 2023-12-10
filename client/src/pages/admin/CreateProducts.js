@@ -2,7 +2,7 @@ import React, { useCallback, useState, useEffect } from "react";
 import { InputForm, Select, Button, MarkdownEditor, Loading } from "components";
 import { useForm } from "react-hook-form";
 import { useSelector, useDispatch } from "react-redux";
-import { getBase64 } from "ultils/helpers";
+import { getBase64 } from "utils/helpers";
 import { toast } from "react-toastify";
 import { apiCreateProduct } from "apis";
 import { showModal } from "store/categories/categorySlice";
@@ -91,63 +91,63 @@ const CreateProducts = () => {
       <div className="p-4">
         <form onSubmit={handleSubmit(handleCreateProduct)}>
           <InputForm
-            label="Name product"
+            label="Tên sản phẩm"
             register={register}
             errors={errors}
             id="title"
             validate={{
-              required: "Need fill this field",
+              required: "Không được để trống",
             }}
             fullWidth
-            placeholder="Name of new product"
+            placeholder="Tên sản phẩm"
           />
           <div className="w-full my-6 flex gap-4">
             <InputForm
-              label="Price"
+              label="Giá sản phẩm"
               register={register}
               errors={errors}
               id="price"
               validate={{
-                required: "Need fill this field",
+                required: "Không được để trống",
               }}
               style="flex-auto"
-              placeholder="Price of new product"
+              placeholder="Giá sản phẩm"
               type="number"
             />
             <InputForm
-              label="Quantity"
+              label="Số lượng"
               register={register}
               errors={errors}
               id="quantity"
               validate={{
-                required: "Need fill this field",
+                required: "Không được để trống",
               }}
               style="flex-auto"
-              placeholder="Quantity of new product"
+              placeholder="Số lượng"
               type="number"
             />
             <InputForm
-              label="Color"
+              label="Màu sắc"
               register={register}
               errors={errors}
               id="color"
               validate={{
-                required: "Need fill this field",
+                required: "Không được để trống",
               }}
               style="flex-auto"
-              placeholder="color of new product"
+              placeholder="Màu sắc sản phẩm"
             />
           </div>
           <div className="w-full my-6 flex gap-4">
             <Select
-              label="Category"
+              label="Danh mục"
               options={categories?.map((el) => ({
                 code: el._id,
                 value: el.title,
               }))}
               register={register}
               id="category"
-              validate={{ required: "Need fill this field" }}
+              validate={{ required: "Không được để trống" }}
               style="flex-auto"
               errors={errors}
               fullWidth
@@ -165,7 +165,7 @@ const CreateProducts = () => {
             />
           </div>
           <MarkdownEditor
-            name="description"
+            name="Mô tả"
             changeValue={changeValue}
             label="Description"
             invalidFields={invalidFields}
@@ -173,7 +173,7 @@ const CreateProducts = () => {
           />
           <div className="flex flex-col gap-2 mt-8">
             <label className="font-semibold" htmlFor="thumb">
-              Upload thumb
+              Tải lên hình ảnh
             </label>
             <input
               type="file"
@@ -197,7 +197,7 @@ const CreateProducts = () => {
           )}
           <div className="flex flex-col gap-2 mt-8">
             <label className="font-semibold" htmlFor="products">
-              Upload images of product
+            Hình ảnh của sản phẩm
             </label>
             <input
               type="file"
@@ -225,7 +225,7 @@ const CreateProducts = () => {
             </div>
           )}
           <div className="my-6">
-            <Button type="submit">Create new product</Button>
+            <Button type="submit">Tạo mới sản phẩm</Button>
           </div>
         </form>
       </div>

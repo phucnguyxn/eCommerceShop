@@ -52,7 +52,7 @@ const CreateBrands = () => {
                             required: "Không được để trống",
                         }}
                         fullWidth
-                        placeholder="Name of new Brand"
+                        placeholder="Tên Brand mới"
                     />
                     <div className="my-6">
                         <Button type="submit">Tạo mới Brand</Button>

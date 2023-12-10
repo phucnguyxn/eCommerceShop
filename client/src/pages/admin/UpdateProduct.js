@@ -1,7 +1,7 @@
 import { InputForm, MarkdownEditor, Select, Button, Loading } from 'components'
 import React, { memo, useState, useEffect, useCallback } from 'react'
 import { useForm } from 'react-hook-form'
-import { validate, getBase64 } from 'ultils/helpers'
+import { validate, getBase64 } from 'utils/helpers'
 import { toast } from 'react-toastify'
 import { apiUpdateProduct } from 'apis'
 import { showModal } from 'store/categories/categorySlice'
@@ -88,66 +88,66 @@ const UpdateProduct = ({ editProduct, render, setEditProduct }) => {
         <div className='w-full flex flex-col gap-4 relative'>
             <div className='h-[69px] w-full'></div>
             <div className='p-4 border-b bg-gray-100 flex justify-between items-center right-0 left-[327px] fixed top-0'>
-                <h1 className='text-3xl font-bold tracking-tight'>Update products</h1>
-                <span className='text-main hover:underline cursor-pointer' onClick={() => setEditProduct(null)} >Cancel</span>
+                <h1 className='text-3xl font-bold tracking-tight'>Cập nhật sản phẩm</h1>
+                <span className='text-main hover:underline cursor-pointer' onClick={() => setEditProduct(null)} >Hủy</span>
             </div>
             <div className='p-4'>
                 <form onSubmit={handleSubmit(handleUpdateProduct)}>
                     <InputForm
-                        label='Name product'
+                        label='Tên sản phẩm'
                         register={register}
                         errors={errors}
                         id='title'
                         validate={{
-                            required: 'Need fill this field'
+                            required: 'Không được để trống'
                         }}
                         fullWidth
-                        placeholder='Name of new product'
+                        placeholder='Tên sản phẩm'
                     />
                     <div className='w-full my-6 flex gap-4'>
                         <InputForm
-                            label='Price'
+                            label='Giá'
                             register={register}
                             errors={errors}
                             id='price'
                             validate={{
-                                required: 'Need fill this field'
+                                required: 'Không được để trống'
                             }}
                             style='flex-auto'
-                            placeholder='Price of new product'
+                            placeholder='Giá sản phẩm'
                             type='number'
                         />
                         <InputForm
-                            label='Quantity'
+                            label='Số lượng'
                             register={register}
                             errors={errors}
                             id='quantity'
                             validate={{
-                                required: 'Need fill this field'
+                                required: 'Không được để trống'
                             }}
                             style='flex-auto'
-                            placeholder='Quantity of new product'
+                            placeholder='Số lượng sản phẩm'
                             type='number'
                         />
                         <InputForm
-                            label='Color'
+                            label='Màu sắc'
                             register={register}
                             errors={errors}
                             id='color'
                             validate={{
-                                required: 'Need fill this field'
+                                required: 'Không được để trống'
                             }}
                             style='flex-auto'
-                            placeholder='color of new product'
+                            placeholder='màu sắc sản phẩm'
                         />
                     </div>
                     <div className='w-full my-6 flex gap-4'>
                         <Select
-                            label='Category'
+                            label='Danh mục'
                             options={categories?.map(el => ({ code: el.title, value: el.title }))}
                             register={register}
                             id='category'
-                            validate={{ required: 'Need fill this field' }}
+                            validate={{ required: 'Không được để trống' }}
                             style='flex-auto'
                             errors={errors}
                             fullWidth
@@ -165,13 +165,13 @@ const UpdateProduct = ({ editProduct, render, setEditProduct }) => {
                     <MarkdownEditor
                         name='description'
                         changeValue={changeValue}
-                        label='Description'
+                        label='Mô tả'
                         invalidFields={invalidFields}
                         setInvalidFields={setInvalidFields}
                         value={payload.description}
                     />
                     <div className='flex flex-col gap-2 mt-8'>
-                        <label className='font-semibold' htmlFor="thumb">Upload thumb</label>
+                        <label className='font-semibold' htmlFor="thumb">Tải lên hình ảnh</label>
                         <input
                             type="file"
                             id="thumb"
@@ -183,7 +183,7 @@ const UpdateProduct = ({ editProduct, render, setEditProduct }) => {
                         <img src={preview.thumb} alt="thumbnail" className='w-[200px] object-contain' />
                     </div>}
                     <div className='flex flex-col gap-2 mt-8'>
-                        <label className='font-semibold' htmlFor="products">Upload images of product</label>
+                        <label className='font-semibold' htmlFor="products">Tải lên hình ảnh sản phẩm</label>
                         <input
                             type="file"
                             id="products"
@@ -202,7 +202,7 @@ const UpdateProduct = ({ editProduct, render, setEditProduct }) => {
                             </div>
                         ))}
                     </div>}
-                    <div className='my-6'><Button type='submit'>Update new product</Button></div>
+                    <div className='my-6'><Button type='submit'>Cập nhật</Button></div>
                 </form>
             </div>
         </div>
