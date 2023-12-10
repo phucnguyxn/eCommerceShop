@@ -1,4 +1,4 @@
-import { get } from 'lodash';
+import { replace } from 'lodash';
 
 export const getAccessToken = () => {
   if (typeof window !== undefined) {
@@ -6,7 +6,7 @@ export const getAccessToken = () => {
       window.localStorage.getItem('persist:shop/user'),
     );
     if (userData) {
-      return get(userData, 'token');
+      return replace(`Bearer ${userData?.token}`, /\"/g, '');
     }
     return null;
   }

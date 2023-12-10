@@ -2,6 +2,10 @@ import axios from 'axios';
 import { getAccessToken } from 'utils/storage';
 
 const instance = axios.create({
+  headers: {
+    Accept: 'application/json',
+    'Content-Type': 'application/json; charset=utf-8',
+  },
   baseURL: process.env.REACT_APP_API_URI,
 });
 
@@ -11,7 +15,7 @@ instance.interceptors.request.use(
     // Do something before request is sent
     const accessToken = getAccessToken();
     if (accessToken) {
-      config.headers = { authorization: `Bearer ${accessToken}` };
+      config.headers = { authorization: accessToken };
       return config;
     }
     return config;
