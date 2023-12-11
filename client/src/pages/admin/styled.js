@@ -20,5 +20,25 @@ export const TopBar = styled.div`
 `;
 
 export const Content = styled.div`
-  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px;
+`;
+
+export const Section = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  padding: 24px;
+  border-radius: 6px;
+  background: white;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+`;
+
+export const SectionTitle = styled.span`
+  color: #333;
+  text-transform: uppercase;
+  font-weight: bold;
 `;
