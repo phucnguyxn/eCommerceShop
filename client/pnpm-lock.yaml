@@ -7,6 +7,9 @@ dependencies:
   '@reduxjs/toolkit':
     specifier: 1.9.3
     version: 1.9.3(react-redux@8.0.5)(react@18.2.0)
+  '@tanstack/react-query':
+    specifier: 5.13.4
+    version: 5.13.4(react@18.2.0)
   '@tinymce/tinymce-react':
     specifier: 4.3.0
     version: 4.3.0(react-dom@18.2.0)(react@18.2.0)
@@ -2517,6 +2520,19 @@ packages:
     dependencies:
       tailwindcss: 3.2.7(postcss@8.4.32)
     dev: true
+
+  /@tanstack/query-core@5.13.4:
+    resolution: {integrity: sha512-8+rJucXvC/xlr4OrxHhEIob/cTlbT4fgmz1VsvB0D12FRStKaXeLORNGcOhSAynRd2NL74SV/Qq0IIb4DedLcA==}
+    dev: false
+
+  /@tanstack/react-query@5.13.4(react@18.2.0):
+    resolution: {integrity: sha512-3HjvkFFriEQwffUXtKHPiwkfFXUGbs46YATTzzyK1+Pw6Ekd3kwzS50e45qdamWuEXmXxyo5S1zp534LdFG0Rw==}
+    peerDependencies:
+      react: ^18.0.0
+    dependencies:
+      '@tanstack/query-core': 5.13.4
+      react: 18.2.0
+    dev: false
 
   /@tinymce/tinymce-react@4.3.0(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-iB4cUsYfcJL4NGuKhqCGYuTmFTje3nPxyPv1HxprTsp/YMGuuiiSNWrv3zwI31QX5Cn8qeq9MrMDnbxuRugHyg==}

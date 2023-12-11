@@ -1,6 +1,6 @@
 import {
   BestSellersChart,
-  HighlightedNumbers,
+  OverviewNumbers,
   RevenueAnalyticChart,
 } from 'components/Dashboard';
 import * as Styled from './styled';
@@ -9,7 +9,7 @@ const Dashboard = () => {
   const renderHighlightedNumbers = () => (
     <Styled.Section>
       <Styled.SectionTitle>Chỉ số tổng quan</Styled.SectionTitle>
-      <HighlightedNumbers />
+      <OverviewNumbers />
     </Styled.Section>
   );
 

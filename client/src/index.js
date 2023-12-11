@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react';
 import { Chart as ChartJS, Title, Tooltip, Legend } from 'chart.js';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { store, persistor } from './store/redux';
 import Application from './Application';
 
@@ -14,11 +15,15 @@ ChartJS.register(Title, Tooltip, Legend);
 const container = document.getElementById('root');
 const root = createRoot(container);
 
+const queryClient = new QueryClient();
+
 root.render(
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
       <BrowserRouter>
-        <Application />
+        <QueryClientProvider client={queryClient}>
+          <Application />
+        </QueryClientProvider>
       </BrowserRouter>
     </PersistGate>
   </Provider>,
