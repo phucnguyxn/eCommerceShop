@@ -1,13 +1,19 @@
 // 3rd libs
-const { map, forEach } = require('lodash');
+const moment = require('moment');
+const { map, forEach, reduce } = require('lodash');
 // models
 const Product = require('../models/product');
 const ProductCategory = require('../models/productCategory');
 const Order = require('../models/order');
 const User = require('../models/user');
 const Brand = require('../models/brand');
-// import constants
-const { ENTITY_TYPE, SORT_DESC } = require('../config/constants');
+// import constants, helpers
+const {
+  ENTITY_TYPE,
+  SORT_DESC,
+  MOMENT_MONTHS,
+} = require('../config/constants');
+const { calculateAmountFromListProducts } = require('../utils/helpers');
 
 // listType should be an array
 const queryTotalEntities = async (type) => {
@@ -65,8 +71,39 @@ const formatOverviewNumberResponse = (data) => {
 const queryBestSellingProducts = async (limit) =>
   await Product.find().sort({ sold: SORT_DESC }).limit(limit).exec();
 
+const queryOrdersByMonth = async (momentMonth) => {
+  const sampleDate = `${moment().year()}-${momentMonth + 1}-01`;
+  const startOfMonth = moment(sampleDate).startOf('month').toDate();
+  const endOfMonth = moment(sampleDate).endOf('month').toDate();
+
+  const orders = await Order.find({
+    createdAt: {
+      $gte: startOfMonth,
+      $lte: endOfMonth,
+    },
+  });
+  const totalOrderAmount = reduce(
+    orders,
+    (acc, order) => acc + calculateAmountFromListProducts(order.products),
+    0,
+  );
+
+  return totalOrderAmount;
+};
+
+const getRevenueAnalyticOfThisYear = async () => {
+  const result = [];
+  for (const momentMonth of Object.values(MOMENT_MONTHS)) {
+    const totalOrderAmount = await queryOrdersByMonth(momentMonth);
+    result.push(totalOrderAmount);
+  }
+  return result;
+};
+
 module.exports = {
   queryTotalEntitiesByTypes,
   queryBestSellingProducts,
+  queryOrdersByMonth,
   formatOverviewNumberResponse,
+  getRevenueAnalyticOfThisYear,
 };

@@ -21,7 +21,8 @@ const getBestSellers = asyncHandler(async (request, response) => {
 });
 
 const getRevenueAnalytic = asyncHandler(async (request, response) => {
-  return response.json('getRevenueAnalytic');
+  const data = await DashboardService.getRevenueAnalyticOfThisYear();
+  return response.json(data);
 });
 
 module.exports = {
