@@ -5,10 +5,10 @@ import { get, map, truncate } from 'lodash';
 import { getBestSellers } from 'apis/dashboard';
 import * as Styled from './styled';
 
-const BestSellersChart = () => {
+const BestSellersChart = ({ limit }) => {
   const { data, isLoading } = useQuery({
-    queryKey: ['getBestSellers'],
-    queryFn: getBestSellers,
+    queryKey: ['getBestSellers', { limit }],
+    queryFn: () => getBestSellers(limit),
   });
 
   const { productNames, soldList } = useMemo(() => ({
@@ -31,13 +31,28 @@ const BestSellersChart = () => {
               label: 'Số lượng đã bán',
               data: soldList,
               backgroundColor: '#3b82f6',
-              barThickness: 40,
+              maxBarThickness: 40,
               barPercentage: 1,
             },
           ],
         }}
         options={{
+          responsive: true,
           indexAxis: 'y',
+          plugins: {
+            legend: {
+              onClick: () => null,
+            },
+          },
+          scales: {
+            y: {
+              ticks: {
+                callback: function (value) {
+                  return truncate(this.getLabelForValue(value), { length: 32 });
+                },
+              },
+            },
+          },
         }}
       />
     </Styled.Wrapper>

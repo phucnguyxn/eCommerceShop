@@ -13,6 +13,9 @@ import {
   CategoryScale,
   LinearScale,
   BarElement,
+  PointElement,
+  LineElement,
+  Colors,
 } from 'chart.js';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { store, persistor } from './store/redux';
@@ -25,6 +28,9 @@ ChartJS.register(
   CategoryScale,
   LinearScale,
   BarElement,
+  PointElement,
+  LineElement,
+  Colors,
 );
 
 ChartJS.defaults.font.size = 14;

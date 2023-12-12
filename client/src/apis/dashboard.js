@@ -6,9 +6,9 @@ export const getOverviewNumbers = () =>
     method: 'GET',
   });
 
-export const getBestSellers = () =>
+export const getBestSellers = (limit) =>
   useHttpRequest({
-    url: '/dashboard/best-sellers',
+    url: `/dashboard/best-sellers?limit=${limit}`,
     method: 'GET',
   });
 
