@@ -13,19 +13,19 @@ export const Card = styled.div`
   align-items: center;
   gap: 12px;
   border-radius: 8px;
-  background: ${({ background }) => background};
+  background: ${({ $background }) => $background};
   width: 220px;
-  padding: 8px;
+  padding: 8px 16px;
 `;
 
 export const IconWrapper = styled.div`
-  width: 60px;
-  height: 60px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: ${({ iconBg }) => iconBg};
+  background: ${({ $iconBg }) => $iconBg};
 `;
 
 export const CardContent = styled.div`

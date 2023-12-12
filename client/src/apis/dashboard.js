@@ -5,3 +5,15 @@ export const getOverviewNumbers = () =>
     url: '/dashboard/overview-numbers',
     method: 'GET',
   });
+
+export const getBestSellers = () =>
+  useHttpRequest({
+    url: '/dashboard/best-sellers',
+    method: 'GET',
+  });
+
+export const getRevenueAnalytic = () =>
+  useHttpRequest({
+    url: '/dashboard/revenue-analytic',
+    method: 'GET',
+  });

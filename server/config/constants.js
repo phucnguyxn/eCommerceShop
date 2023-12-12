@@ -6,7 +6,7 @@ const ENTITY_TYPE = {
   brand: 'brand',
 };
 
-const LIMIT_BEST_SELLERS_COUNT = 7;
+const LIMIT_BEST_SELLERS_COUNT = 5;
 
 const SORT_ASC = 1;
 const SORT_DESC = -1;

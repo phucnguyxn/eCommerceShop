@@ -16,8 +16,8 @@ const OverviewNumbers = () => {
   });
 
   const renderMetric = ({ title, value, icon, iconBg, background }) => (
-    <Styled.Card background={background}>
-      <Styled.IconWrapper iconBg={iconBg}>{icon}</Styled.IconWrapper>
+    <Styled.Card $background={background}>
+      <Styled.IconWrapper $iconBg={iconBg}>{icon}</Styled.IconWrapper>
       <Styled.CardContent>
         <Styled.Title>{title}</Styled.Title>
         <Styled.Value>{value}</Styled.Value>
