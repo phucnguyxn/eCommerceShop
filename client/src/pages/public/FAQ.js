@@ -1,8 +1,8 @@
 import React from 'react'
 
 const FAQ = () => {
-    return (
-        <div>FAQ</div>
+    return (   
+        <div>Câu hỏi thường gặp</div>
     )
 }
 

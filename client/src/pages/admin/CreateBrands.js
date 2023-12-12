@@ -39,12 +39,12 @@ const CreateBrands = () => {
     return (
         <div className="w-full">
             <h1 className="h-[75px] flex justify-between items-center text-3xl font-bold px-4 border-b">
-                <span>Tạo mới Brand</span>
+                <span>Tạo mới thương hiệu</span>
             </h1>
             <div className="p-4">
                 <form onSubmit={handleSubmit(handleCreateBrand)}>
                     <InputForm
-                        label="Tên Brand"
+                        label="Tên thương hiệu"
                         register={register}
                         errors={errors}
                         id="title"
@@ -52,10 +52,10 @@ const CreateBrands = () => {
                             required: "Không được để trống",
                         }}
                         fullWidth
-                        placeholder="Tên Brand mới"
+                        placeholder="Tên thương hiệu mới"
                     />
                     <div className="my-6">
-                        <Button type="submit">Tạo mới Brand</Button>
+                        <Button type="submit">Tạo mới</Button>
                     </div>
                 </form>
             </div>

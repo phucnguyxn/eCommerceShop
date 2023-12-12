@@ -51,8 +51,8 @@ const ManageUser = () => {
     }
     const handleDeleteUser = (uid) => {
         Swal.fire({
-            title: 'Are you sure...',
-            text: 'Are you ready remove this user?',
+            title: 'Bạn có chắc không',
+            text: 'Bạn có chắc chắn xóa người dùng này?',
             showCancelButton: true
         }).then(async (result) => {
             if (result.isConfirmed) {

@@ -65,8 +65,8 @@ const ManageBrands = () => {
 
     const handleDeleteBrand = (pid) => {
         Swal.fire({
-            title: "Are you sure?",
-            text: "Are you sure remove this brand",
+            title: "Bạn có chắc không?",
+            text: "Bạn có chắc là xóa thương hiệu này?",
             icon: "warning",
             showCancelButton: true,
         }).then(async (rs) => {
@@ -92,7 +92,7 @@ const ManageBrands = () => {
             )}
             <div className="h-[69px] w-full"></div>
             <div className="p-4 border-b w-full bg-gray-100 flex justify-between items-center fixed top-0">
-                <h1 className="text-3xl font-bold tracking-tight">Quản lý Brands</h1>
+                <h1 className="text-3xl font-bold tracking-tight">Quản lý thương hiệu</h1>
             </div>
             <div className="flex justify-end items-center px-4">
                 <form className="w-[45%]">
@@ -101,16 +101,18 @@ const ManageBrands = () => {
                         register={register}
                         errors={errors}
                         fullWidth
-                        placeholder="Search brands by title"
+                        placeholder="Tìm kiếm thương hiệu..."
                     />
                 </form>
             </div>
             <table className="table-auto">
                 <thead>
                     <tr className="border bg-sky-900 text-white border-white">
+                        <th className="text-center py-2">STT</th>
                         <th className="text-center py-2">Tiêu đề</th>
-                        <th className="text-center py-2">Đã tạo lúc</th>
-                        <th className="text-center py-2">Cập nhật lúc</th>
+                        <th className="text-center py-2">Đã tạo ngày</th>
+                        <th className="text-center py-2">Cập nhật ngày</th>
+                        <th className="text-center py-2">Tùy chọn</th>
                     </tr>
                 </thead>
                 <tbody>

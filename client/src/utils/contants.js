@@ -24,7 +24,7 @@ export const navigation = [
   },
   {
     id: 5,
-    value: "FAQs",
+    value: "CÂU HỎI",
     path: `/${path.FAQ}`,
   },
   // {

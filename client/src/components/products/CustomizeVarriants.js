@@ -71,7 +71,7 @@ const CustomizeVarriants = ({ customizeVarriant, setCustomizeVarriant, render })
         <div className='w-full flex flex-col gap-4 relative'>
             <div className='h-[69px] w-full'></div>
             <div className='p-4 border-b bg-gray-100 flex justify-between items-center right-0 left-[327px] fixed top-0'>
-                <h1 className='text-3xl font-bold tracking-tight'>Custiomize varriants of products</h1>
+                <h1 className='text-3xl font-bold tracking-tight'>Tùy chỉnh các phiên bản khác của sản phẩm </h1>
                 <span
                     className='text-main hover:underline cursor-pointer'
                     onClick={() => setCustomizeVarriant(null)}
@@ -82,47 +82,47 @@ const CustomizeVarriants = ({ customizeVarriant, setCustomizeVarriant, render })
             <form onSubmit={handleSubmit(handleAddVarriant)} className='p-4 w-full flex flex-col gap-4'>
                 <div className='flex gap-4 items-center w-full'>
                     <InputForm
-                        label='Original name'
+                        label='Tên'
                         register={register}
                         errors={errors}
                         id='title'
                         fullWidth
                         style='flex-auto'
                         validate={{
-                            required: 'Need fill this field'
+                            required: 'Không được để trống'
                         }}
-                        placeholder='Title of varriant'
+                        placeholder='Tiêu đề của varriant'
                     />
                 </div>
                 <div className='flex gap-4 items-center w-full'>
                     <InputForm
-                        label='Price varriant'
+                        label='Giá varriant'
                         register={register}
                         errors={errors}
                         id='price'
                         validate={{
-                            required: 'Need fill this field'
+                            required: 'Không được để trống'
                         }}
                         fullWidth
-                        placeholder='Price of new varriant'
+                        placeholder='Giá của varriant'
                         type='number'
                         style='flex-auto'
                     />
                     <InputForm
-                        label='Color varriant'
+                        label='Màu varriant'
                         register={register}
                         errors={errors}
                         id='color'
                         validate={{
-                            required: 'Need fill this field'
+                            required: 'Không được để trống'
                         }}
                         fullWidth
-                        placeholder='Color of new varriant'
+                        placeholder='Màu của varriant'
                         style='flex-auto'
                     />
                 </div>
                 <div className='flex flex-col gap-2 mt-8'>
-                    <label className='font-semibold' htmlFor="thumb">Upload thumb</label>
+                    <label className='font-semibold' htmlFor="thumb">Tải lên hình ảnh</label>
                     <input
                         type="file"
                         id="thumb"
@@ -134,7 +134,7 @@ const CustomizeVarriants = ({ customizeVarriant, setCustomizeVarriant, render })
                     <img src={preview.thumb} alt="thumbnail" className='w-[200px] object-contain' />
                 </div>}
                 <div className='flex flex-col gap-2 mt-8'>
-                    <label className='font-semibold' htmlFor="products">Upload images of product</label>
+                    <label className='font-semibold' htmlFor="products">Tải lên hình ảnh của sản phẩm</label>
                     <input
                         type="file"
                         id="products"

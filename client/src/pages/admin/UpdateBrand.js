@@ -40,13 +40,13 @@ const UpdateBrand = ({ editBrand, render, setEditBrand }) => {
         <div className='w-full flex flex-col gap-4 relative'>
             <div className='h-[69px] w-full'></div>
             <div className='p-4 border-b bg-gray-100 flex justify-between items-center right-0 left-[327px] fixed top-0'>
-                <h1 className='text-3xl font-bold tracking-tight'>Cập nhật brands</h1>
+                <h1 className='text-3xl font-bold tracking-tight'>Cập nhật thương hiệu</h1>
                 <span className='text-main hover:underline cursor-pointer' onClick={() => setEditBrand(null)} >Hủy</span>
             </div>
             <div className='p-4'>
                 <form onSubmit={handleSubmit(handleUpdateBrand)}>
                     <InputForm
-                        label='Tên brand'
+                        label='Tên thương hiệu'
                         register={register}
                         errors={errors}
                         id='title'
@@ -54,11 +54,11 @@ const UpdateBrand = ({ editBrand, render, setEditBrand }) => {
                             required: 'Không được để trống'
                         }}
                         fullWidth
-                        placeholder='Tên brand'
+                        placeholder='Tên thương hiệu'
                     />
                     <div className='w-full my-6 flex gap-4'>
                         <Select
-                            label='Brand'
+                            label='Thương hiệu'
                             options={categories?.find(el => el.title === watch('brand'))?.brand?.map(el => ({ code: el.toLowerCase(), value: el }))}
                             register={register}
                             id='brand'

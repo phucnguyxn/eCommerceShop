@@ -86,7 +86,7 @@ const CreateProducts = () => {
   return (
     <div className="w-full">
       <h1 className="h-[75px] flex justify-between items-center text-3xl font-bold px-4 border-b">
-        <span>Create New Product</span>
+        <span>Tạo mới sản phẩm</span>
       </h1>
       <div className="p-4">
         <form onSubmit={handleSubmit(handleCreateProduct)}>
@@ -153,7 +153,7 @@ const CreateProducts = () => {
               fullWidth
             />
             <Select
-              label="Brand"
+              label="Thương hiệu"
               options={categories
                 ?.find((el) => el._id === watch("category"))
                 ?.brand?.map((el) => ({ code: el, value: el }))}
@@ -165,20 +165,20 @@ const CreateProducts = () => {
             />
           </div>
           <MarkdownEditor
-            name="Mô tả"
+            name="description"
             changeValue={changeValue}
-            label="Description"
+            label="Mô tả"
             invalidFields={invalidFields}
             setInvalidFields={setInvalidFields}
           />
           <div className="flex flex-col gap-2 mt-8">
             <label className="font-semibold" htmlFor="thumb">
-              Tải lên hình ảnh
+              Tải lên hình ảnh 
             </label>
             <input
               type="file"
               id="thumb"
-              {...register("thumb", { required: "Need fill" })}
+              {...register("thumb", { required: "Chưa có hình ảnh" })}
             />
             {errors["thumb"] && (
               <small className="text-xs text-red-500">
@@ -203,7 +203,7 @@ const CreateProducts = () => {
               type="file"
               id="products"
               multiple
-              {...register("images", { required: "Need fill" })}
+              {...register("images", { required: "Chưa có hình ảnh" })}
             />
             {errors["images"] && (
               <small className="text-xs text-red-500">
@@ -225,7 +225,7 @@ const CreateProducts = () => {
             </div>
           )}
           <div className="my-6">
-            <Button type="submit">Tạo mới sản phẩm</Button>
+            <Button type="submit">Tạo một sản phẩm mới</Button>
           </div>
         </form>
       </div>

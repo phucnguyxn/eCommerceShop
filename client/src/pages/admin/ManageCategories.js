@@ -65,8 +65,8 @@ const ManageCategories = () => {
 
     const handleDeleteCategory = (pid) => {
         Swal.fire({
-            title: "Are you sure?",
-            text: "Are you sure remove this category",
+            title: "Bạn có chắc không?",
+            text: "Bạn có chắc muốn xóa danh mục này không?",
             icon: "warning",
             showCancelButton: true,
         }).then(async (rs) => {
@@ -101,7 +101,7 @@ const ManageCategories = () => {
                         register={register}
                         errors={errors}
                         fullWidth
-                        placeholder="Search categories by title"
+                        placeholder="Tìm kiếm danh mục"
                     />
                 </form>
             </div>
@@ -110,8 +110,10 @@ const ManageCategories = () => {
                     <tr className="border bg-sky-900 text-white border-white">
                         <th className="text-center py-2">Tiêu đề</th>
                         <th className="text-center py-2">Danh mục</th>
-                        <th className="text-center py-2">Đã tạo lúc</th>
-                        <th className="text-center py-2">Cập nhật lúc</th>
+                        <th></th>
+                        <th className="text-center py-2">Ngày tạo</th>
+                        <th className="text-center py-2">Ngày cập nhật</th>
+                        <th className="text-center py-2">Tùy chọn</th>
                     </tr>
                 </thead>
                 <tbody>

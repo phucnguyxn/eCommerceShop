@@ -33,9 +33,9 @@ const ProductInfomation = ({
   const handleVoteNow = () => {
     if (!isLoggedIn) {
       Swal.fire({
-        text: 'Login to vote',
-        cancelButtonText: 'Cancel',
-        confirmButtonText: 'Go login',
+        text: 'Đăng nhập để vote',
+        cancelButtonText: 'Hủy',
+        confirmButtonText: 'Tới trang đăng nhập',
         title: 'Oops!',
         showCancelButton: true,
       }).then((rs) => {
@@ -104,7 +104,7 @@ const ProductInfomation = ({
           </div>
         </div>
         <div className="p-4 flex items-center justify-center text-sm flex-col gap-2">
-          <span>Bạn có đánh giá sản phẩm này không?</span>
+          <span>Bạn có thích sản phẩm này không?</span>
           <Button handleOnClick={handleVoteNow}>Đánh giá bây giờ!</Button>
         </div>
         <div className="flex flex-col gap-4">

@@ -36,9 +36,9 @@ const DetailCart = ({ location, navigate }) => {
             </div>
             <div className='flex flex-col border w-main mx-auto my-8'>
                 <div className='w-main mx-auto bg-gray-200  font-bold py-3 grid grid-cols-10'>
-                    <span className='col-span-6 w-full text-center'>Products</span>
-                    <span className='col-span-1 w-full text-center'>Quantity</span>
-                    <span className='col-span-3 w-full text-center'>Price</span>
+                    <span className='col-span-6 w-full text-center'>Sản phẩm</span>
+                    <span className='col-span-1 w-full text-center'>Số lượng</span>
+                    <span className='col-span-3 w-full text-center'>Giá</span>
                 </div>
                 {currentCart?.map(el => (
                     <OrderItem
@@ -54,11 +54,11 @@ const DetailCart = ({ location, navigate }) => {
             </div>
             <div className='w-main mx-auto flex flex-col mb-12 justify-center items-end gap-3'>
                 <span className='flex items-center gap-8 text-sm'>
-                    <span>Subtotal:</span>
+                    <span>Tổng thanh toán:</span>
                     <span className='text-main font-bold'>{`${formatMoney(currentCart?.reduce((sum, el) => +el?.price * el.quantity + sum, 0))} VND`}</span>
                 </span>
-                <span className='text-xs italic'>Shipping, taxes, and discounts calculated at checkout</span>
-                <Button handleOnClick={handleSubmit}>Checkout</Button>
+                <span className='text-xs italic'>Phí vận chuyển, thuế và chiết khấu được tính khi thanh toán</span>
+                <Button handleOnClick={handleSubmit}>Mua hàng</Button>
             </div>
         </div >
     )

@@ -90,7 +90,7 @@ const Products = () => {
       </div>
       <div className="w-main border p-4 flex justify-between mt-8 m-auto">
         <div className="w-4/5 flex-auto flex flex-col gap-3">
-          <span className="font-semibold text-sm">Filter by</span>
+          <span className="font-semibold text-sm">Lọc bởi</span>
           <div className="flex items-center gap-4">
             <SearchItem
               name="price"

@@ -38,11 +38,11 @@ const Product = ({
       if (!current)
         return Swal.fire({
           title: "Almost...",
-          text: "Please login first!",
+          text: "Vui lòng đăng nhập trước!",
           icon: "info",
-          cancelButtonText: "Not now!",
+          cancelButtonText: "Để sau!",
           showCancelButton: true,
-          confirmButtonText: "Go login page",
+          confirmButtonText: "Tới trang đăng nhập",
         }).then(async (rs) => {
           if (rs.isConfirmed)
             navigate({

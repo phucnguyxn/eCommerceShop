@@ -46,7 +46,7 @@ const History = ({ navigate, location }) => {
   return (
     <div className="w-full relative px-4">
       <header className="text-3xl font-semibold py-4 border-b border-b-blue-200">
-        History
+        Đơn hàng
       </header>
       <div className="flex justify-end items-center px-4">
         <form className="w-[45%] grid grid-cols-2 gap-4">
@@ -56,7 +56,7 @@ const History = ({ navigate, location }) => {
               register={register}
               errors={errors}
               fullWidth
-              placeholder="Search orders by status,..."
+              placeholder="Tìm kiếm đơn hàng theo trạng thái,..."
             />
           </div>
           <div className="col-span-1 flex items-center">
@@ -72,11 +72,11 @@ const History = ({ navigate, location }) => {
       <table className="table-auto w-full">
         <thead>
           <tr className="border bg-sky-900 text-white border-white">
-            <th className="text-center py-2">#</th>
+            <th className="text-center py-2">STT</th>
             <th className="text-center py-2">Sản phẩm</th>
             <th className="text-center py-2">Thành tiền</th>
             <th className="text-center py-2">Trạng thái</th>
-            <th className="text-center py-2">Created At</th>
+            <th className="text-center py-2">Ngày mua</th>
           </tr>
         </thead>
         <tbody>

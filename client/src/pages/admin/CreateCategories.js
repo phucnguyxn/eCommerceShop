@@ -40,7 +40,7 @@ const CreateCategories = () => {
             <div className="p-4">
                 <form onSubmit={handleSubmit(handleCreateCategory)}>
                     <InputForm
-                        label="Name Category"
+                        label="Tên danh mục"
                         name='title'
                         register={register}
                         errors={errors}
