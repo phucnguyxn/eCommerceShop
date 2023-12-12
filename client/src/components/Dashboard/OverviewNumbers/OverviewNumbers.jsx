@@ -10,8 +10,8 @@ import {
 import * as Styled from './styled';
 
 const OverviewNumbers = () => {
-  const { data } = useQuery({
-    queryKey: ['getHighlightNumbers'],
+  const { data, isLoading } = useQuery({
+    queryKey: ['getOverviewNumbers'],
     queryFn: getOverviewNumbers,
   });
 
@@ -24,6 +24,10 @@ const OverviewNumbers = () => {
       </Styled.CardContent>
     </Styled.Card>
   );
+
+  if (isLoading) {
+    return <>Loading</>;
+  }
 
   return (
     <Styled.Wrapper>

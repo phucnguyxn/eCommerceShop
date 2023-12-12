@@ -1,5 +1,3 @@
-import moment from 'moment';
-import { take } from 'lodash';
 import { useMemo } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { Line as LineChart } from 'react-chartjs-2';
@@ -22,22 +20,24 @@ const MONTHS = [
 ];
 
 const RevenueAnalyticChart = () => {
-  const currentMonth = useMemo(() => moment().month() + 1, []);
-
-  const { data } = useQuery({
+  const { data, isLoading } = useQuery({
     query: ['getRevenueAnalytic'],
     queryFn: getRevenueAnalytic,
   });
+
+  if (isLoading) {
+    return <>Loading</>;
+  }
 
   return (
     <Styled.Wrapper>
       <LineChart
         data={{
-          labels: take(MONTHS, currentMonth),
+          labels: MONTHS,
           datasets: [
             {
-              label: 'Doanh thu',
-              data: take(data, currentMonth),
+              label: 'Doanh thu (VNĐ)',
+              data: data,
               borderColor: '#1da956',
               backgroundColor: '#e4f8eb',
               borderWidth: 2,

@@ -93,9 +93,14 @@ const queryOrdersByMonth = async (momentMonth) => {
 
 const getRevenueAnalyticOfThisYear = async () => {
   const result = [];
+  const currentMonth = moment().month();
   for (const momentMonth of Object.values(MOMENT_MONTHS)) {
-    const totalOrderAmount = await queryOrdersByMonth(momentMonth);
-    result.push(totalOrderAmount);
+    if (momentMonth <= currentMonth) {
+      const totalOrderAmount = await queryOrdersByMonth(momentMonth);
+      result.push(totalOrderAmount);
+    } else {
+      result.push(null);
+    }
   }
   return result;
 };
