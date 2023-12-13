@@ -85,7 +85,7 @@ const ManageUser = () => {
                     <table className='table-auto mb-6 text-left w-full'>
                         <thead className='font-bold bg-gray-700 text-[13px] text-white'>
                             <tr className='border border-gray-500'>
-                                <th className='px-4 py-2'>#</th>
+                                <th className='px-4 py-2'>STT</th>
                                 <th className='px-4 py-2'>Email </th>
                                 <th className='px-4 py-2'>Họ</th>
                                 <th className='px-4 py-2'>Tên</th>

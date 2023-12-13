@@ -40,29 +40,54 @@ export const validate = (payload, setInvalidFields) => {
       invalids++;
       setInvalidFields((prev) => [
         ...prev,
-        { name: arr[0], mes: 'Require this field.' },
+        { name: arr[0], mes: 'Không được để trống.' },
       ]);
     }
   }
-  // for (let arr of formatPayload) {
-  //     switch (arr[0]) {
-  //         case 'email':
-  //             const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
-  //             if (!arr[1].match(regex)) {
-  //                 invalids++
-  //                 setInvalidFields(prev => [...prev, { name: arr[0], mes: 'Email invalid.' }])
-  //             }
-  //             break;
-  //         case 'password':
-  //             if (arr[1].length < 6) {
-  //                 invalids++
-  //                 setInvalidFields(prev => [...prev, { name: arr[0], mes: 'Password minimum 6 characters.' }])
-  //             }
-  //             break;
-  //         default:
-  //             break;
-  //     }
-  // }
+  for (let arr of formatPayload) {
+      switch (arr[0]) {
+
+          case 'firstname':
+              const ho = /^[^\d?!\@#\$%\><\^\&*\)\(+=._-]{2,}$/
+              if (!arr[1].match(ho)) {
+                  invalids++
+                  setInvalidFields(prev => [...prev, { name: arr[0], mes: 'Họ chỉ chứa chữ cái và dấu' }])
+              }
+              break;
+          
+          case 'lastname':
+                const ten = /^[^\d?!\@#\$%\><\^\&*\)\(+=._-]{2,}$/
+                if (!arr[1].match(ten)) {
+                    invalids++
+                    setInvalidFields(prev => [...prev, { name: arr[0], mes: 'Tên chỉ chứa chữ cái và dấu' }])
+                }
+                break;
+          case 'mobile':
+                const mobile = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4}$/
+                if (!arr[1].match(mobile)) {
+                    invalids++
+                    setInvalidFields(prev => [...prev, { name: arr[0], mes: 'Số điện thoại không đúng' }])
+                }
+                break;      
+          case 'email':
+              const email = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+              if (!arr[1].match(email)) {
+                  invalids++
+                  setInvalidFields(prev => [...prev, { name: arr[0], mes: 'Email không đúng.' }])
+              }
+              break;
+
+          // case 'password':
+          //   const pass = /^((?=.*\d)(?=.*[A-Z])(?=.*\W).{8,8})$/
+          //     if (!arr[1].match(pass)) {
+          //         invalids++
+          //         setInvalidFields(prev => [...prev, { name: arr[0], mes: 'Mật khẩu tối thiểu 8 ký tự, có số, có một chữ cái in hoa và một kí tự đặc biệt.' }])
+          //     }
+          //     break;
+          default:
+              break;
+      }
+  }
 
   return invalids;
 };

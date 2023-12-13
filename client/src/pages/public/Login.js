@@ -64,7 +64,7 @@ const Login = () => {
         // dispatch(showModal({ isShowModal: false, modalChildren: null }))
         if (response.success) {
           //   setIsVerifiedEmail(true);
-          Swal.fire("Register successfully!", response.mes, "success");
+          Swal.fire("Đăng kí thành công!", response.mes, "success");
         } else Swal.fire("Oops!", response.mes, "error");
       } else {
         const rs = await apiLogin(data);
@@ -202,6 +202,18 @@ const Login = () => {
             setInvalidFieds={setInvalidFields}
             fullWidth
           />
+          {isRegister && (
+            <InputField
+              value={payload.password}
+              setValue={setPayload}
+              nameKey="password"
+              type="password"
+              invalidFields={invalidFields}
+              setInvalidFieds={setInvalidFields}
+              fullWidth
+            />
+          )}
+          
           <Button handleOnClick={handleSubmit} fw>
             {isRegister ? "Register" : "Login"}
           </Button>
