@@ -76,7 +76,7 @@ const ManageUser = () => {
                         value={queries.q}
                         setValue={setQueries}
                         style={'w500'}
-                        placeholder='Tìm kiếm tên hoặc email người dùng...'
+                        placeholder='Tìm kiếm email người dùng...'
                         isHideLabel
                     />
                 </div>
@@ -93,7 +93,7 @@ const ManageUser = () => {
                                 <th className='px-4 py-2'>Số điện thoại</th>
                                 <th className='px-4 py-2'>Trạng thái</th>
                                 <th className='px-4 py-2'>Ngày tạo</th>
-                                <th className='px-4 py-2'>Chọn</th>
+                                <th className='px-4 py-2'>Tùy chọn</th>
                             </tr>
                         </thead>
                         <tbody>

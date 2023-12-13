@@ -66,7 +66,6 @@ const ManageBrands = () => {
     const handleDeleteBrand = (pid) => {
         Swal.fire({
             title: "Bạn có chắc không?",
-            text: "Bạn có chắc là xóa thương hiệu này?",
             icon: "warning",
             showCancelButton: true,
         }).then(async (rs) => {
@@ -94,24 +93,13 @@ const ManageBrands = () => {
             <div className="p-4 border-b w-full bg-gray-100 flex justify-between items-center fixed top-0">
                 <h1 className="text-3xl font-bold tracking-tight">Quản lý thương hiệu</h1>
             </div>
-            <div className="flex justify-end items-center px-4">
-                <form className="w-[45%]">
-                    <InputForm
-                        id="q"
-                        register={register}
-                        errors={errors}
-                        fullWidth
-                        placeholder="Tìm kiếm thương hiệu..."
-                    />
-                </form>
-            </div>
             <table className="table-auto">
                 <thead>
                     <tr className="border bg-sky-900 text-white border-white">
                         <th className="text-center py-2">STT</th>
                         <th className="text-center py-2">Tiêu đề</th>
-                        <th className="text-center py-2">Đã tạo ngày</th>
-                        <th className="text-center py-2">Cập nhật ngày</th>
+                        <th className="text-center py-2">Ngày tạo</th>
+                        <th className="text-center py-2">Ngày cập nhật</th>
                         <th className="text-center py-2">Tùy chọn</th>
                     </tr>
                 </thead>

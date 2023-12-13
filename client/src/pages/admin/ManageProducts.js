@@ -15,6 +15,7 @@ import Swal from "sweetalert2"
 import { toast } from "react-toastify"
 import { BiEdit, BiCustomize } from "react-icons/bi"
 import { RiDeleteBin6Line } from "react-icons/ri"
+import clsx from "clsx"
 
 const ManageProducts = () => {
   const navigate = useNavigate()
@@ -65,8 +66,7 @@ const ManageProducts = () => {
 
   const handleDeleteProduct = (pid) => {
     Swal.fire({
-      title: "Are you sure?",
-      text: "Are you sure remove this product",
+      title: "Bạn có chắc không?",
       icon: "warning",
       showCancelButton: true,
     }).then(async (rs) => {
@@ -80,7 +80,7 @@ const ManageProducts = () => {
   }
 
   return (
-    <div className="w-full flex flex-col gap-4 relative">
+    <div className={clsx('w-full pl-16')}>
       {editProduct && (
         <div className="absolute inset-0 min-h-screen bg-gray-100 z-50">
           <UpdateProduct
@@ -114,50 +114,40 @@ const ManageProducts = () => {
           />
         </form>
       </div>
-      <table className="table-auto">
+      <table className="table-auto mb-6 text-left w-full">
         <thead>
           <tr className="border bg-sky-900 text-white border-white">
-            <th className="text-center py-2">STT</th>
-            <th className="text-center py-2">Thumb</th>
-            <th className="text-center py-2">Tên sản phẩm</th>
-            <th className="text-center py-2">Brand</th>
-            <th className="text-center py-2">Danh mục</th>
-            <th className="text-center py-2">Giá</th>
-            <th className="text-center py-2">Số lượng</th>
-            <th className="text-center py-2">Đã bán</th>
-            <th className="text-center py-2">Màu sắc</th>
-            <th className="text-center py-2">Đánh giá</th>
-            <th className="text-center py-2">Phiên bản</th>
-            <th className="text-center py-2">Cập nhật lúc</th>
-            <th className="text-center py-2">Trạng thái</th>
+            <th className="px-4 py-2">STT</th>
+            <th className="px-4 py-2">Tên sản phẩm</th>
+            <th className="px-4 py-2">Thương hiệu</th>
+            <th className="px-4 py-2">Danh mục</th>
+            <th className="px-4 py-2">Giá</th>
+            <th className="px-4 py-2">Số lượng</th>
+            <th className="px-4 py-2">Đã bán</th>
+            <th className="px-4 py-2">Màu sắc</th>
+            <th className="px-4 py-2">Đánh giá</th>
+            <th className="px-4 py-2">Cập nhật lúc</th>
+            <th className="px-4 py-2">Tùy chọn</th>
           </tr>
         </thead>
         <tbody>
           {products?.map((el, idx) => (
             <tr className="border-b" key={el._id}>
-              <td className="text-center py-2">
+              <td className="px-4 py-2">
                 {(+params.get("page") > 1 ? +params.get("page") - 1 : 0) *
                   process.env.REACT_APP_LIMIT +
                   idx +
                   1}
               </td>
-              <td className="text-center py-2">
-                <img
-                  src={el.thumb}
-                  alt="thumb"
-                  className="w-12 h-12 object-cover"
-                />
-              </td>
-              <td className="text-center py-2">{el.title}</td>
-              <td className="text-center py-2">{el.brand}</td>
-              <td className="text-center py-2">{el.category}</td>
-              <td className="text-center py-2">{el.price}</td>
-              <td className="text-center py-2">{el.quantity}</td>
-              <td className="text-center py-2">{el.sold}</td>
-              <td className="text-center py-2">{el.color}</td>
-              <td className="text-center py-2">{el.totalRatings}</td>
-              <td className="text-center py-2">{el?.varriants?.length || 0}</td>
-              <td className="text-center py-2">
+              <td className="px-4 py-2">{el.title}</td>
+              <td className="px-4 py-2">{el.brand}</td>
+              <td className="px-4 py-2">{el.category}</td>
+              <td className="px-4 py-2">{el.price}</td>
+              <td className="px-4 py-2">{el.quantity}</td>
+              <td className="px-4 py-2">{el.sold}</td>
+              <td className="px-4 py-2">{el.color}</td>
+              <td className="px-4 py-2">{el.totalRatings}</td>
+              <td className="px-4 py-2">
                 {moment(el.createdAt).format("DD/MM/YYYY")}
               </td>
               <td className="text-center py-2">

@@ -35,7 +35,7 @@ const TopHeaders = () => {
                 <span>ĐẶT HÀNG ONLINE HOẶC GỌI VỀ (+1800) 000 8808</span>
                 {isLoggedIn && current
                     ? <div className=' flex gap-4 text-sm items-center'>
-                        <span>{`Welcome, ${current?.lastname} ${current?.firstname}`}</span>
+                        <span>{`Xin chào, ${current?.lastname} ${current?.firstname}`}</span>
                         <span
                             onClick={() => dispatch(logout())}
                             className='hover:rounded-full hover:bg-gray-200 cursor-pointer hover:text-main p-2'>

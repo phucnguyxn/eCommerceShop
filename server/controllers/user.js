@@ -19,7 +19,7 @@ const register = asyncHandler(async (req, res) => {
       mes: 'Missing inputs',
     });
   const user = await User.findOne({ email });
-  if (user) throw new Error('User has existed');
+  if (user) throw new Error('Người dùng đã tồn tại');
   else {
     const newUser = await User.create({
       email,
@@ -31,9 +31,9 @@ const register = asyncHandler(async (req, res) => {
 
     return res.json({
       success: newUser ? true : false,
-      mes: newUser
-        ? 'Please check your email to active account'
-        : 'Some went wrong, please try later',
+      // mes: newUser
+      //   ? 'Please check your email to active account'
+      //   : 'Some went wrong, please try later',
     });
   }
 });

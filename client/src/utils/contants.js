@@ -27,16 +27,6 @@ export const navigation = [
     value: "CÂU HỎI",
     path: `/${path.FAQ}`,
   },
-  // {
-  //   id: 6,
-  //   value: "Category",
-  //   path: `/${path.CATEGORIES}`
-  // },
-  // {
-  //   id: 7,
-  //   value: "Brand",
-  //   path: `/${path.BRANDS}`
-  // }
 ]
 const { RiTruckFill, BsShieldShaded, BsReplyFill, FaTty, AiFillGift } = icons
 export const productExtraInfomation = [
@@ -198,29 +188,29 @@ export const adminSidebar = [
   {
     id: 1,
     type: "SINGLE",
-    text: "Dashboard",
+    text: "Thống kê",
     path: `/${path.ADMIN}/${path.DASHBOARD}`,
     icon: <AiOutlineDashboard size={20} />,
   },
   {
     id: 2,
     type: "SINGLE",
-    text: "Manage users",
+  text: "Quản lý người dùng",
     path: `/${path.ADMIN}/${path.MANAGE_USER}`,
     icon: <MdGroups size={20} />,
   },
   {
     id: 3,
     type: "PARENT",
-    text: "Manage products",
+    text: "Sản phẩm",
     icon: <TbBrandProducthunt size={20} />,
     submenu: [
       {
-        text: "Create product",
+        text: "Thêm mới sản phẩm",
         path: `/${path.ADMIN}/${path.CREATE_PRODUCTS}`,
       },
       {
-        text: "Manage products",
+        text: "Quản lý sản phẩm",
         path: `/${path.ADMIN}/${path.MANAGE_PRODUCTS}`,
       },
     ],
@@ -228,15 +218,15 @@ export const adminSidebar = [
   {
     id: 4,
     type: "PARENT",
-    text: "Manage category",
+    text: "Danh mục",
     icon: <TbBrandProducthunt size={20} />,
     submenu: [
       {
-        text: "Create category",
+        text: "Thêm mới danh mục",
         path: `/${path.ADMIN}/${path.CREATE_CATEGORIES}`,
       },
       {
-        text: "Manage category",
+        text: "Quản lý danh mục",
         path: `/${path.ADMIN}/${path.MANAGE_CATEGORIES}`,
       },
     ]
@@ -244,15 +234,15 @@ export const adminSidebar = [
   {
     id: 5,
     type: "PARENT",
-    text: "Manage brand",
+    text: "Thương hiệu",
     icon: <TbBrandProducthunt size={20} />,
     submenu: [
       {
-        text: "Create brand",
+        text: "Thêm mới thương hiệu",
         path: `/${path.ADMIN}/${path.CREATE_BRANDS}`,
       },
       {
-        text: "Manage brand",
+        text: "Quản lý thương hiệu",
         path: `/${path.ADMIN}/${path.MANAGE_BRANDS}`,
       },
     ]
@@ -260,7 +250,7 @@ export const adminSidebar = [
   {
     id: 6,
     type: "SINGLE",
-    text: "Manage orders",
+    text: "Quản lý đơn hàng",
     path: `/${path.ADMIN}/${path.MANAGE_ORDER}`,
     icon: <RiBillLine size={20} />,
   },
@@ -269,28 +259,28 @@ export const memberSidebar = [
   {
     id: 1,
     type: "SINGLE",
-    text: "Personal",
+    text: "Thông tin cá nhân",
     path: `/${path.MEMBER}/${path.PERSONAL}`,
     icon: <AiOutlineDashboard size={20} />,
   },
   {
     id: 2,
     type: "SINGLE",
-    text: "My cart",
+    text: "Giỏ hàng",
     path: `/${path.MEMBER}/${path.MY_CART}`,
     icon: <MdGroups size={20} />,
   },
   {
     id: 4,
     type: "SINGLE",
-    text: "Buy histories",
+    text: "Lịch sử mua hàng",
     path: `/${path.MEMBER}/${path.HISTORY}`,
     icon: <RiBillLine size={20} />,
   },
   {
     id: 4,
     type: "SINGLE",
-    text: "Wishlist",
+    text: "Danh sách yêu thích",
     path: `/${path.MEMBER}/${path.WISHLIST}`,
     icon: <RiBillLine size={20} />,
   },

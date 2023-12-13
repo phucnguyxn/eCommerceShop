@@ -30,7 +30,7 @@ const DetailCart = ({ location, navigate }) => {
         <div className='w-full'>
             <div className='h-[81px] flex justify-center items-center bg-gray-100'>
                 <div className='w-main'>
-                    <h3 className='font-semibold text-2xl uppercase'>My Cart</h3>
+                    <h3 className='font-semibold text-2xl uppercase'>Giỏ hàng</h3>
                     {/* <Breadcrumb category={location?.pathname?.replace('/', '')?.split('-')?.join(' ')} /> */}
                 </div>
             </div>
