@@ -46,6 +46,12 @@ const RevenueAnalyticChart = () => {
         }}
         options={{
           responsive: true,
+          elements: {
+            point: {
+              radius: 5,
+              hoverRadius: 5,
+            },
+          },
           plugins: {
             legend: {
               onClick: () => null,
