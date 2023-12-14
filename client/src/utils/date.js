@@ -3,8 +3,8 @@ import { map, range } from 'lodash';
 
 export const getDayListOfCurrentMonth = () => {
   const currentYear = moment().year();
-  const currentMonth = moment().month();
-  const endDateOfMonth = moment(`${currentYear}-${currentMonth + 1}-01`)
+  const currentMonth = moment().month() + 1;
+  const endDateOfMonth = moment(`${currentYear}-${currentMonth}-01`)
     .endOf('month')
     .date();
 
