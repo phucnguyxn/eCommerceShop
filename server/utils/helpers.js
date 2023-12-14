@@ -1,3 +1,4 @@
+const moment = require('moment');
 const { get, reduce, multiply, toNumber } = require('lodash');
 const { MOMENT_MONTHS, MONTHS } = require('../config/constants');
 
@@ -44,4 +45,32 @@ const calculateAmountFromListProducts = (products) =>
     0,
   );
 
-module.exports = { getMonthName, calculateAmountFromListProducts };
+const getTotalAmountOfListOrders = (orders) =>
+  reduce(
+    orders,
+    (acc, order) => acc + calculateAmountFromListProducts(order.products),
+    0,
+  );
+
+const getTotalDaysOfThisMonth = () => {
+  const currentYear = moment().year();
+  const currentMonth = moment().month();
+  return moment(`${currentYear}-${currentMonth + 1}-01`)
+    .endOf('month')
+    .date();
+};
+
+const getQuarterRange = (quarter) => {
+  const startOfQuarter = moment().quarter(quarter).startOf('quarter');
+  const endOfQuarter = moment().quarter(quarter).endOf('quarter');
+
+  return { startOfQuarter, endOfQuarter };
+};
+
+module.exports = {
+  getMonthName,
+  calculateAmountFromListProducts,
+  getTotalAmountOfListOrders,
+  getTotalDaysOfThisMonth,
+  getQuarterRange,
+};

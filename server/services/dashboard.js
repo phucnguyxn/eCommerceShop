@@ -1,6 +1,6 @@
 // 3rd libs
 const moment = require('moment');
-const { map, forEach, reduce } = require('lodash');
+const { map, forEach, range } = require('lodash');
 // models
 const Product = require('../models/product');
 const ProductCategory = require('../models/productCategory');
@@ -12,8 +12,13 @@ const {
   ENTITY_TYPE,
   SORT_DESC,
   MOMENT_MONTHS,
+  QUARTERS,
 } = require('../config/constants');
-const { calculateAmountFromListProducts } = require('../utils/helpers');
+const {
+  getTotalAmountOfListOrders,
+  getQuarterRange,
+  getTotalDaysOfThisMonth,
+} = require('../utils/helpers');
 
 // listType should be an array
 const queryTotalEntities = async (type) => {
@@ -71,33 +76,84 @@ const formatOverviewNumberResponse = (data) => {
 const queryBestSellingProducts = async (limit) =>
   await Product.find().sort({ sold: SORT_DESC }).limit(limit).exec();
 
+const queryOrdersByDay = async (momentDay) => {
+  const currentMonth = moment().month() + 1;
+  const currentYear = moment().year();
+  const sampleDate = `${currentYear}-${currentMonth}-${momentDay + 1}`;
+
+  const startOfDay = moment(sampleDate).startOf('day').toDate();
+  const endOfDay = moment(sampleDate).endOf('day').toDate();
+
+  return await Order.find({
+    createdAt: {
+      $gte: startOfDay,
+      $lte: endOfDay,
+    },
+  });
+};
+
 const queryOrdersByMonth = async (momentMonth) => {
   const sampleDate = `${moment().year()}-${momentMonth + 1}-01`;
   const startOfMonth = moment(sampleDate).startOf('month').toDate();
   const endOfMonth = moment(sampleDate).endOf('month').toDate();
 
-  const orders = await Order.find({
+  return await Order.find({
     createdAt: {
       $gte: startOfMonth,
       $lte: endOfMonth,
     },
   });
-  const totalOrderAmount = reduce(
-    orders,
-    (acc, order) => acc + calculateAmountFromListProducts(order.products),
-    0,
-  );
-
-  return totalOrderAmount;
 };
 
-const getRevenueAnalyticOfThisYear = async () => {
+const queryOrdersByQuarter = async (quarter) => {
+  const { startOfQuarter, endOfQuarter } = getQuarterRange(quarter);
+
+  return await Order.find({
+    createdAt: {
+      $gte: startOfQuarter,
+      $lte: endOfQuarter,
+    },
+  });
+};
+
+const getRevenueEveryDayOfThisMonth = async () => {
   const result = [];
-  const currentMonth = moment().month();
+  for (const momentDay of range(0, getTotalDaysOfThisMonth())) {
+    const hasTotalAmount = momentDay < moment().date();
+    if (hasTotalAmount) {
+      const orders = await queryOrdersByDay(momentDay);
+      const totalAmount = getTotalAmountOfListOrders(orders);
+      result.push(totalAmount);
+    } else {
+      result.push(null);
+    }
+  }
+  return result;
+};
+
+const getRevenueEveryMonthOfThisYear = async () => {
+  const result = [];
   for (const momentMonth of Object.values(MOMENT_MONTHS)) {
-    if (momentMonth <= currentMonth) {
-      const totalOrderAmount = await queryOrdersByMonth(momentMonth);
-      result.push(totalOrderAmount);
+    const hasTotalAmount = momentMonth <= moment().month();
+    if (hasTotalAmount) {
+      const orders = await queryOrdersByMonth(momentMonth);
+      const totalAmount = getTotalAmountOfListOrders(orders);
+      result.push(totalAmount);
+    } else {
+      result.push(null);
+    }
+  }
+  return result;
+};
+
+const getRevenueEveryQuarterOfThisYear = async () => {
+  const result = [];
+  for (const quarter of QUARTERS) {
+    const hasTotalAmount = quarter <= moment().quarter();
+    if (hasTotalAmount) {
+      const orders = await queryOrdersByQuarter(quarter);
+      const totalAmount = getTotalAmountOfListOrders(orders);
+      result.push(totalAmount);
     } else {
       result.push(null);
     }
@@ -110,5 +166,7 @@ module.exports = {
   queryBestSellingProducts,
   queryOrdersByMonth,
   formatOverviewNumberResponse,
-  getRevenueAnalyticOfThisYear,
+  getRevenueEveryDayOfThisMonth,
+  getRevenueEveryMonthOfThisYear,
+  getRevenueEveryQuarterOfThisYear,
 };
