@@ -37,7 +37,7 @@ const Product = ({
     if (flag === "CART") {
       if (!current)
         return Swal.fire({
-          title: "Almost...",
+          title: "Úi...",
           text: "Vui lòng đăng nhập trước!",
           icon: "info",
           cancelButtonText: "Để sau!",
@@ -117,19 +117,19 @@ const Product = ({
               {current?.cart?.some(
                 (el) => el.product === productData._id.toString()
               ) ? (
-                <span title="Added to Cart">
+                <span title="Đã thêm vào giỏ hàng">
                   <SelectOption icon={<BsFillCartCheckFill color="green" />} />
                 </span>
               ) : (
                 <span
-                  title="Add to Cart"
+                  title="Thêm vào giỏ hàng"
                   onClick={(e) => handleClickOptions(e, "CART")}
                 >
                   <SelectOption icon={<BsFillCartPlusFill />} />
                 </span>
               )}
               <span
-                title="Add to Wishlist"
+                title="Thêm vào yêu thích"
                 onClick={(e) => handleClickOptions(e, "WISHLIST")}
               >
                 <SelectOption

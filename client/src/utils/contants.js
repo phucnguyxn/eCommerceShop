@@ -32,32 +32,32 @@ const { RiTruckFill, BsShieldShaded, BsReplyFill, FaTty, AiFillGift } = icons
 export const productExtraInfomation = [
   {
     id: "1",
-    title: "Guarantee",
-    sub: "Quality Checked",
+    title: "Bảo đảm",
+    sub: "Đã kiểm tra chất lượng",
     icon: <BsShieldShaded />,
   },
   {
     id: "2",
-    title: "Free Shipping",
-    sub: "Free On All Products",
+    title: "Miễn phí vận chuyển",
+    sub: "Miễn phí trên tất cả sản phẩm",
     icon: <RiTruckFill />,
   },
   {
     id: "3",
-    title: "Special Gift Cards",
-    sub: "Special Gift Cards",
+    title: "Thẻ quà tặng",
+    sub: "Thẻ quà tặng đặc biệt",
     icon: <AiFillGift />,
   },
   {
     id: "4",
-    title: "Free Return",
-    sub: "Within 7 Days",
+    title: "Hoàn trả miễn phí",
+    sub: "Trong vòng 7 ngày",
     icon: <BsReplyFill />,
   },
   {
     id: "5",
-    title: "Consultancy",
-    sub: "Lifetime 24/7/356",
+    title: "Tư vấn",
+    sub: "Trọn đời 24/7/356",
     icon: <FaTty />,
   },
 ]
@@ -101,10 +101,32 @@ export const productInfoTabs = [
   },
   {
     id: 4,
-    name: "PAYMENT",
+    name: "GIAO HÀNG",
     content: `
-        Customers are able to pick the next available delivery day that best fits their schedule. However, to route stops as efficiently as possible, Shopify Shop will provide the time frame. Customers will not be able to choose a time. You will be notified in advance of your scheduled time frame. Please make sure that a responsible adult (18 years or older) will be home at that time.
-        In preparation for your delivery, please remove existing furniture, pictures, mirrors, accessories, etc. to prevent damages. Also insure that the area where you would like your furniture placed is clear of any old furniture and any other items that may obstruct the passageway of the delivery team. Shopify Shop will deliver, assemble, and set-up your new furniture purchase and remove all packing materials from your home. Our delivery crews are not permitted to move your existing furniture or other household items. Delivery personnel will attempt to deliver the purchased items in a safe and controlled manner but will not attempt to place furniture if they feel it will result in damage to the product or your home. Delivery personnel are unable to remove doors, hoist furniture or carry furniture up more than 3 flights of stairs. An elevator must be available for deliveries to the 4th floor and above.`,
+    - Đơn hàng online đều được miễn phí giao hàng trên toàn quốc (và phụ thu phí cồng kềnh nếu có).
+    - Đơn hàng được xác định là hàng cồng kềnh nếu rơi vào một trong các trường hợp sau:
+
+
+- Có thể là hàng thuộc ngành hàng Laptop, màn hình, Tivi, hoặc phụ kiện (chi tiết nhân viên sẽ trao đổi cụ thể khi gọi điện xác nhận đơn hàng)
+
+
+- Khối lượng thực tế > 8kg
+
+
+- Khối lượng quy đổi > 10kg (DxRxC/5000)
+
+
+- Cả 3 chiều có kích thước lớn hơn 35cm
+
+
+- Cả 2 chiều có kích thước lớn hơn 45cm
+
+
+- Chỉ cần một chiều có kích thước lớn hơn 50cm
+
+
+
+Địa chỉ giao hàng mà quý khách cung cấp trong quá trình đặt hàng có thể được thay đổi sau khi yêu cầu đặt hàng đã được chúng tôi tiếp nhận. Để thay đổi (các) thông tin này, quý khách cần liên hệ sớm nhất với Hoàng Hà Mobile với thông tin được cập nhật chính xác.`,
   },
 ]
 
@@ -162,25 +184,25 @@ export const sorts = [
 export const voteOptions = [
   {
     id: 1,
-    text: "Terrible",
+    text: "Tệ",
   },
   {
     id: 2,
-    text: "Bad",
+    text: "Không hài lòng",
   },
   {
     id: 3,
-    text: "Neutral",
+    text: "Bình thường",
   },
 
   {
     id: 4,
-    text: "Good",
+    text: "Hài lòng",
   },
 
   {
     id: 5,
-    text: "Perfect",
+    text: "Tuyệt vời",
   },
 ]
 const { AiOutlineDashboard, MdGroups, TbBrandProducthunt, RiBillLine } = icons
@@ -195,7 +217,7 @@ export const adminSidebar = [
   {
     id: 2,
     type: "SINGLE",
-  text: "Quản lý người dùng",
+  text: "Quản lý tài khoản",
     path: `/${path.ADMIN}/${path.MANAGE_USER}`,
     icon: <MdGroups size={20} />,
   },
@@ -308,11 +330,11 @@ export const blockStatus = [
 ]
 export const statusOrders = [
   {
-    label: "Cancelled",
+    label: "Đã hủy",
     value: "Cancelled",
   },
   {
-    label: "Succeed",
+    label: "Thành công",
     value: "Succeed",
   },
 ]

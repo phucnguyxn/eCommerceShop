@@ -41,6 +41,14 @@ const MOMENT_MONTHS = {
   december: 11,
 };
 
+const TIME_RANGE = {
+  DAY: 'DAY',
+  MONTH: 'MONTH',
+  QUARTER: 'QUARTER',
+};
+
+const QUARTERS = [1, 2, 3, 4];
+
 module.exports = {
   ENTITY_TYPE,
   LIMIT_BEST_SELLERS_COUNT,
@@ -48,4 +56,6 @@ module.exports = {
   SORT_DESC,
   MOMENT_MONTHS,
   MONTHS,
+  TIME_RANGE,
+  QUARTERS,
 };

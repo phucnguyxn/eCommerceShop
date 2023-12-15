@@ -6,7 +6,7 @@ import { getBestSellers } from 'apis/dashboard';
 import * as Styled from './styled';
 
 const BestSellersChart = ({ limit }) => {
-  const { data, isLoading } = useQuery({
+  const { data } = useQuery({
     queryKey: ['getBestSellers', { limit }],
     queryFn: () => getBestSellers(limit),
   });
@@ -15,10 +15,6 @@ const BestSellersChart = ({ limit }) => {
     productNames: map(data, (product) => get(product, 'title')),
     soldList: map(data, (product) => get(product, 'sold'), [data]),
   }));
-
-  if (isLoading) {
-    return <>Loading</>;
-  }
 
   return (
     <Styled.Wrapper>

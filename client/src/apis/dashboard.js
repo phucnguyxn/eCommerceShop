@@ -12,8 +12,8 @@ export const getBestSellers = (limit) =>
     method: 'GET',
   });
 
-export const getRevenueAnalytic = () =>
+export const getRevenueAnalytic = (timeRangeType) =>
   useHttpRequest({
-    url: '/dashboard/revenue-analytic',
+    url: `/dashboard/revenue-analytic?timeRangeType=${timeRangeType}`,
     method: 'GET',
   });

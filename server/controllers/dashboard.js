@@ -4,6 +4,7 @@ const DashboardService = require('../services/dashboard');
 const {
   ENTITY_TYPE,
   LIMIT_BEST_SELLERS_COUNT,
+  TIME_RANGE,
 } = require('../config/constants');
 
 const getOverviewNumbers = asyncHandler(async (request, response) => {
@@ -20,8 +21,23 @@ const getBestSellers = asyncHandler(async (request, response) => {
   return response.json(data);
 });
 
+// will return an array of numbers
 const getRevenueAnalytic = asyncHandler(async (request, response) => {
-  const data = await DashboardService.getRevenueAnalyticOfThisYear();
+  const timeRangeType = get(request, 'query.timeRangeType', TIME_RANGE.DAY);
+  let data = [];
+  switch (timeRangeType) {
+    case TIME_RANGE.DAY:
+      data = await DashboardService.getRevenueEveryDayOfThisMonth();
+      break;
+    case TIME_RANGE.MONTH:
+      data = await DashboardService.getRevenueEveryMonthOfThisYear();
+      break;
+    case TIME_RANGE.QUARTER:
+      data = await DashboardService.getRevenueEveryQuarterOfThisYear();
+      break;
+    default:
+      break;
+  }
   return response.json(data);
 });
 
