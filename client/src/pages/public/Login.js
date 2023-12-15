@@ -65,7 +65,7 @@ const Login = () => {
         if (response.success) {
           //   setIsVerifiedEmail(true);
           Swal.fire("Đăng kí thành công!", response.mes, "success");
-        } else Swal.fire("Oops!", response.mes, "error");
+        } else Swal.fire("Thất bại", response.mes, "error");
       } else {
         const rs = await apiLogin(data);
         if (rs.success) {
@@ -79,7 +79,7 @@ const Login = () => {
           searchParams.get("redirect")
             ? navigate(searchParams.get("redirect"))
             : navigate(`/${path.HOME}`);
-        } else Swal.fire("Oops!", rs.mes, "error");
+        } else Swal.fire("Thất bại", rs.mes, "error");
       }
     }
   }, [payload, isRegister]);
@@ -91,7 +91,7 @@ const Login = () => {
         setIsRegister(false);
         resetPayload();
       });
-    } else Swal.fire("Oops!", response.mes, "error");
+    } else Swal.fire("Thất bại", response.mes, "error");
     setIsVerifiedEmail(false);
     setToken("");
   };
@@ -102,7 +102,7 @@ const Login = () => {
         <div className="absolute top-0 left-0 right-0 bottom-0 bg-overlay z-50 flex flex-col justify-center items-center">
           <div className="bg-white w-[500px] rounded-md p-8">
             <h4 className="">
-            Chúng tôi đã gửi mã tới thư của bạn. Vui lòng kiểm tra thư và nhập thông tin của bạn
+              Chúng tôi đã gửi mã tới thư của bạn. Vui lòng kiểm tra thư và nhập thông tin của bạn
               mã số:
             </h4>
             <input
@@ -202,18 +202,7 @@ const Login = () => {
             setInvalidFieds={setInvalidFields}
             fullWidth
           />
-          {isRegister && (
-            <InputField
-              value={payload.password}
-              setValue={setPayload}
-              nameKey="password"
-              type="password"
-              invalidFields={invalidFields}
-              setInvalidFieds={setInvalidFields}
-              fullWidth
-            />
-          )}
-          
+
           <Button handleOnClick={handleSubmit} fw>
             {isRegister ? "Register" : "Login"}
           </Button>

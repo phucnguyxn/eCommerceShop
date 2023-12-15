@@ -72,11 +72,11 @@ const History = ({ navigate, location }) => {
       <table className="table-auto w-full">
         <thead>
           <tr className="border bg-sky-900 text-white border-white">
-            <th className="text-center py-2">STT</th>
-            <th className="text-center py-2">Sản phẩm</th>
-            <th className="text-center py-2">Thành tiền</th>
-            <th className="text-center py-2">Trạng thái</th>
-            <th className="text-center py-2">Ngày mua</th>
+            <th className="px-4 py-2">STT</th>
+            <th className="px-4 py-2">Sản phẩm</th>
+            <th className="px-4 py-2">Thành tiền</th>
+            <th className="px-4 py-2">Trạng thái</th>
+            <th className="px-4 py-2">Ngày mua</th>
           </tr>
         </thead>
         <tbody>
@@ -89,7 +89,7 @@ const History = ({ navigate, location }) => {
                   1}
               </td>
               <td className="text-center max-w-[500px] py-2">
-                <span className="grid grid-cols-4 gap-4">
+                <span className="grid gap-4 text-center py-2">
                   {el.products?.map((item) => (
                     <span
                       className="flex col-span-1 items-center gap-2"
@@ -103,7 +103,7 @@ const History = ({ navigate, location }) => {
                       <span className="flex flex-col">
                         <span className="text-main text-sm">{item.title}</span>
                         <span className="flex items-center text-xs gap-2">
-                          <span>Quantity:</span>
+                          <span>Số lượng:</span>
                           <span className="text-main">{item.quantity}</span>
                         </span>
                       </span>

@@ -16,10 +16,10 @@ const register = asyncHandler(async (req, res) => {
   if (!email || !password || !lastname || !firstname || !mobile)
     return res.status(400).json({
       success: false,
-      mes: 'Missing inputs',
+      mes: 'Không được để trống!',
     });
   const user = await User.findOne({ email });
-  if (user) throw new Error('Người dùng đã tồn tại');
+  if (user) throw new Error('Người dùng đã tồn tại!');
   else {
     const newUser = await User.create({
       email,
@@ -30,10 +30,7 @@ const register = asyncHandler(async (req, res) => {
     });
 
     return res.json({
-      success: newUser ? true : false,
-      // mes: newUser
-      //   ? 'Please check your email to active account'
-      //   : 'Some went wrong, please try later',
+      success: newUser ? true : false
     });
   }
 });
@@ -60,7 +57,7 @@ const login = asyncHandler(async (req, res) => {
   if (!email || !password)
     return res.status(400).json({
       success: false,
-      mes: 'Missing inputs',
+      mes: 'Không được để trống!',
     });
   // plain object
   const response = await User.findOne({ email });
@@ -88,7 +85,7 @@ const login = asyncHandler(async (req, res) => {
       userData,
     });
   } else {
-    throw new Error('Invalid credentials!');
+    throw new Error('Thông tin không hợp lệ!');
   }
 });
 const getCurrent = asyncHandler(async (req, res) => {
@@ -260,8 +257,8 @@ const deleteUser = asyncHandler(async (req, res) => {
   return res.status(200).json({
     success: response ? true : false,
     mes: response
-      ? `User with email ${response.email} deleted`
-      : 'No user delete',
+      ? `Người dùng có email ${response.email} đã được xóa thành công.`
+      : 'Không có người dùng.',
   });
 });
 const updateUser = asyncHandler(async (req, res) => {
@@ -327,7 +324,7 @@ const updateCart = asyncHandler(async (req, res) => {
     );
     return res.status(200).json({
       success: response ? true : false,
-      mes: response ? 'Updated your cart' : 'Some thing went wrong',
+      mes: response ? 'Thành công' : 'Some thing went wrong',
     });
   } else {
     const response = await User.findByIdAndUpdate(
@@ -341,7 +338,7 @@ const updateCart = asyncHandler(async (req, res) => {
     );
     return res.status(200).json({
       success: response ? true : false,
-      mes: response ? 'Updated your cart' : 'Some thing went wrong',
+      mes: response ? 'Thành công' : 'Some thing went wrong',
     });
   }
 });
@@ -355,7 +352,7 @@ const removeProductInCart = asyncHandler(async (req, res) => {
   if (!alreadyProduct)
     return res.status(200).json({
       success: true,
-      mes: 'Updated your cart',
+      mes: 'Thành công',
     });
   const response = await User.findByIdAndUpdate(
     _id,
@@ -364,7 +361,7 @@ const removeProductInCart = asyncHandler(async (req, res) => {
   );
   return res.status(200).json({
     success: response ? true : false,
-    mes: response ? 'Updated your cart' : 'Some thing went wrong',
+    mes: response ? 'Thành công' : 'Some thing went wrong',
   });
 });
 
@@ -389,7 +386,7 @@ const updateWishlist = asyncHandler(async (req, res) => {
     );
     return res.json({
       success: response ? true : false,
-      mes: response ? 'Updated your wishlist.' : 'Failed to update wihlist!',
+      mes: response ? 'Thành công.' : 'Failed to update wihlist!',
     });
   } else {
     const response = await User.findByIdAndUpdate(
@@ -399,7 +396,7 @@ const updateWishlist = asyncHandler(async (req, res) => {
     );
     return res.json({
       success: response ? true : false,
-      mes: response ? 'Updated your wishlist.' : 'Failed to update wihlist!',
+      mes: response ? 'Thành công.' : 'Failed to update wihlist!',
     });
   }
 });

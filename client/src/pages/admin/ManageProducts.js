@@ -110,7 +110,7 @@ const ManageProducts = () => {
             register={register}
             errors={errors}
             fullWidth
-            placeholder="Search products by title, description,..."
+            placeholder="Tìm kiếm theo tên, thương hiệu,..."
           />
         </form>
       </div>

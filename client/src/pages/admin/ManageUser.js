@@ -82,7 +82,7 @@ const ManageUser = () => {
                 </div>
                 <form onSubmit={handleSubmit(handleUpdate)}>
                     {editElm && <Button type='submit'>Cập nhật</Button>}
-                    <table className='table-auto mb-6 text-left w-full'>
+                    <table className='table-auto mb-6 text-left w-full '>
                         <thead className='font-bold bg-gray-700 text-[13px] text-white'>
                             <tr className='border border-gray-500'>
                                 <th className='px-4 py-2'>STT</th>
