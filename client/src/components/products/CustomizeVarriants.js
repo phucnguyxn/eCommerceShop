@@ -71,12 +71,12 @@ const CustomizeVarriants = ({ customizeVarriant, setCustomizeVarriant, render })
         <div className='w-full flex flex-col gap-4 relative'>
             <div className='h-[69px] w-full'></div>
             <div className='p-4 border-b bg-gray-100 flex justify-between items-center right-0 left-[327px] fixed top-0'>
-                <h1 className='text-3xl font-bold tracking-tight'>Tùy chỉnh các phiên bản khác của sản phẩm </h1>
+                <h1 className='text-3xl font-bold tracking-tight'>Thêm phiên bản khác của sản phẩm </h1>
                 <span
                     className='text-main hover:underline cursor-pointer'
                     onClick={() => setCustomizeVarriant(null)}
                 >
-                    Back
+                    Hủy
                 </span>
             </div>
             <form onSubmit={handleSubmit(handleAddVarriant)} className='p-4 w-full flex flex-col gap-4'>
@@ -96,7 +96,7 @@ const CustomizeVarriants = ({ customizeVarriant, setCustomizeVarriant, render })
                 </div>
                 <div className='flex gap-4 items-center w-full'>
                     <InputForm
-                        label='Giá varriant'
+                        label='Giá'
                         register={register}
                         errors={errors}
                         id='price'
@@ -104,12 +104,12 @@ const CustomizeVarriants = ({ customizeVarriant, setCustomizeVarriant, render })
                             required: 'Không được để trống'
                         }}
                         fullWidth
-                        placeholder='Giá của varriant'
+                        placeholder='Giá'
                         type='number'
                         style='flex-auto'
                     />
                     <InputForm
-                        label='Màu varriant'
+                        label='Màu'
                         register={register}
                         errors={errors}
                         id='color'
