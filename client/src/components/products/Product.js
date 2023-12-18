@@ -108,12 +108,12 @@ const Product = ({
         <div className="w-full relative">
           {isShowOption && (
             <div className="absolute bottom-[-10px] left-0 right-0 flex justify-center gap-2 animate-slide-top">
-              <span
+              {/* <span
                 title="Quick view"
                 onClick={(e) => handleClickOptions(e, "QUICK_VIEW")}
               >
                 <SelectOption icon={<AiFillEye />} />
-              </span>
+              </span> */}
               {current?.cart?.some(
                 (el) => el.product === productData._id.toString()
               ) ? (

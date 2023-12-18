@@ -42,7 +42,7 @@ const Personal = ({ navigate }) => {
     return (
         <div className='w-full relative px-4'>
             <header className='text-3xl font-semibold py-4 border-b border-b-blue-200'>
-            Thông tin cá nhân
+                Thông tin cá nhân
             </header>
             <form onSubmit={handleSubmit(handleUpdateInfor)} className='w-3/5 mx-auto py-8 flex flex-col gap-4'>
                 <InputForm
@@ -53,7 +53,7 @@ const Personal = ({ navigate }) => {
                     validate={{
                         required: 'Không được để trống ',
                         pattern: {
-                            value:  /^[^\d?!\@#\$%\><\^\&*\)\(+=._-]{2,}$/gm,
+                            value: /^[^\d?!\@#\$%\><\^\&*\)\(+=._-]{2,}$/gm,
                             message: 'Họ chỉ chứa chữ cái và dấu.'
                         }
 
@@ -67,7 +67,7 @@ const Personal = ({ navigate }) => {
                     validate={{
                         required: 'Không được để trống ',
                         pattern: {
-                            value:  /^[^\d?!\@#\$%\><\^\&*\)\(+=._-]{2,}$/gm,
+                            value: /^[^\d?!\@#\$%\><\^\&*\)\(+=._-]{2,}$/gm,
                             message: 'Tên chỉ chứa chữ cái và dấu.'
                         }
 
@@ -108,11 +108,11 @@ const Personal = ({ navigate }) => {
                 />
                 <div className='flex items-center gap-2'>
                     <span className='font-medium'>Trạng thái tài khoản:</span>
-                    <span>{current?.isBlocked ? 'Blocked' : 'Actived'}</span>
+                    <span>{current?.isBlocked ? 'Bị khóa' : 'Đã kích hoạt'}</span>
                 </div>
                 <div className='flex items-center gap-2'>
-                    <span className='font-medium'>Role:</span>
-                    <span>{+current?.role === 1945 ? 'Admin' : 'User'}</span>
+                    <span className='font-medium'>Vai trò:</span>
+                    <span>{+current?.role === 1945 ? 'Quản trị viên' : 'Người dùng'}</span>
                 </div>
                 <div className='flex items-center gap-2'>
                     <span className='font-medium'>Đã tạo:</span>
