@@ -9,6 +9,7 @@ import { showModal } from "store/categories/categorySlice";
 
 const CreateProducts = () => {
   const { categories } = useSelector((state) => state.app);
+  const { brands } = useSelector((state) => state.app);
   const dispatch = useDispatch();
   const {
     register,
@@ -41,7 +42,7 @@ const CreateProducts = () => {
     const imagesPreview = [];
     for (let file of files) {
       if (file.type !== "image/png" && file.type !== "image/jpeg") {
-        toast.warning("File not supported!");
+        toast.warning("Tệp không được hỗ trợ!");
         return;
       }
       const base64 = await getBase64(file);
@@ -154,11 +155,16 @@ const CreateProducts = () => {
             />
             <Select
               label="Thương hiệu"
+              // options={brands?.map((el) => ({
+              //   code: el._id,
+              //   value: el.title,
+              // }))}
               options={categories
                 ?.find((el) => el._id === watch("category"))
                 ?.brand?.map((el) => ({ code: el, value: el }))}
               register={register}
               id="brand"
+              validate={{ required: "Không được để trống" }}
               style="flex-auto"
               errors={errors}
               fullWidth
@@ -173,7 +179,7 @@ const CreateProducts = () => {
           />
           <div className="flex flex-col gap-2 mt-8">
             <label className="font-semibold" htmlFor="thumb">
-              Tải lên hình ảnh 
+              Tải lên hình ảnh
             </label>
             <input
               type="file"
@@ -197,7 +203,7 @@ const CreateProducts = () => {
           )}
           <div className="flex flex-col gap-2 mt-8">
             <label className="font-semibold" htmlFor="products">
-            Hình ảnh của sản phẩm
+              Hình ảnh của sản phẩm
             </label>
             <input
               type="file"

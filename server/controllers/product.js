@@ -15,7 +15,7 @@ const createProduct = asyncHandler(async (req, res) => {
   const newProduct = await Product.create(req.body);
   return res.status(200).json({
     success: newProduct ? true : false,
-    mes: newProduct ? "Created" : "Failed.",
+    mes: newProduct ? "Thành công." : "Thất bại.",
   });
 });
 const getProduct = asyncHandler(async (req, res) => {

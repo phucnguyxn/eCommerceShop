@@ -1,6 +1,6 @@
-const mongoose = require('mongoose'); // Erase if already required
+const mongoose = require('mongoose'); // Xóa nếu đã được yêu cầu
 
-// Declare the Schema of the Mongo model
+// Khai báo Schema của Mongo model
 var blogSchema = new mongoose.Schema({
     title: {
         type: String,

@@ -316,7 +316,7 @@ const DetailProduct = ({ isQuickView, data, location, dispatch, navigate }) => {
               />
             </div>
             <Button handleOnClick={handleAddToCart} fw>
-              Add to Cart
+              Thêm vào giỏ hàng
             </Button>
           </div>
         </div>

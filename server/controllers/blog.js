@@ -161,4 +161,3 @@ module.exports = {
   deleteBlog,
   uploadImagesBlog,
 }
-//eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2VlNDMwODJlODRhODVlMjU4NDMwNDEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2Nzc2Nzg5NjEsImV4cCI6MTY3Nzg1MTc2MX0.BnP1r4AKh0spfZz5ugYu2PwqIzOLBn9RxGiGO7M_yKc
