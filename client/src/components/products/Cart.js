@@ -37,7 +37,7 @@ const Cart = ({ dispatch, navigate }) => {
                             <div className='flex flex-col gap-1'>
                                 <span className='text-sm text-main'>{el.title}</span>
                                 <span className='text-[10px]'>{el.color}</span>
-                                <span className='text-[10px]'>{`Quantity: ${el.quantity}`}</span>
+                                <span className='text-[10px]'>{`Số lượng: ${el.quantity}`}</span>
                                 <span className='text-sm'>{formatMoney(el.price) + ' VND'}</span>
                             </div>
                         </div>
@@ -54,7 +54,7 @@ const Cart = ({ dispatch, navigate }) => {
                 <Button handleOnClick={() => {
                     dispatch(showCart())
                     navigate(`/${path.MEMBER}/${path.DETAIL_CART}`)
-                }}  style='rounded-none w-full bg-main py-3' >Giỏ Hàng</Button>
+                }} style='rounded-none w-full bg-main py-3' >Giỏ Hàng</Button>
             </div>
 
         </div>

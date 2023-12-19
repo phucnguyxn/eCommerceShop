@@ -137,9 +137,9 @@ const ManageBrands = () => {
                     ))}
                 </tbody>
             </table>
-            <div className="w-full flex justify-end my-8">
-                <Pagination totalCount={counts} />
-            </div>
+            {/* <div className="w-full flex justify-end my-8">
+                <Pagination totalCount={counts}/>
+            </div> */}
         </div>
     )
 }

@@ -24,7 +24,7 @@ const TopHeaders = () => {
     }, [dispatch, isLoggedIn])
 
     useEffect(() => {
-        if (mes) Swal.fire('Oops!', mes, 'info').then(() => {
+        if (mes) Swal.fire('Thất bại', mes, 'info').then(() => {
             dispatch(clearMessage())
             navigate(`/${path.LOGIN}`)
         })

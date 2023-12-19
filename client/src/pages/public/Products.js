@@ -82,12 +82,12 @@ const Products = () => {
   }, [sort])
   return (
     <div className="w-full">
-      <div className="h-[81px] flex justify-center items-center bg-gray-100">
+      {/* <div className="h-[81px] flex justify-center items-center bg-gray-100">
         <div className="w-main">
           <h3 className="font-semibold uppercase">{category}</h3>
           <Breadcrumb category={category} />
         </div>
-      </div>
+      </div> */}
       <div className="w-main border p-4 flex justify-between mt-8 m-auto">
         <div className="w-4/5 flex-auto flex flex-col gap-3">
           <span className="font-semibold text-sm">Lọc bởi</span>
