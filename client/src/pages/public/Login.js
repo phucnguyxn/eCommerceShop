@@ -202,18 +202,20 @@ const Login = () => {
             setInvalidFieds={setInvalidFields}
             fullWidth
           />
-          {isRegister && (
+          
+          {isRegister && 
             <InputField
-              value={payload.password}
+              value={payload.confirmPassword}
               setValue={setPayload}
-              nameKey="password"
-              type="password"
+              nameKey='confirmPassword'
+              type='password'
               invalidFields={invalidFields}
               setInvalidFieds={setInvalidFields}
               fullWidth
-            />
-          )}
-          
+              placeholder="Please confirm password"
+            />}
+
+
           <Button handleOnClick={handleSubmit} fw>
             {isRegister ? "Register" : "Login"}
           </Button>

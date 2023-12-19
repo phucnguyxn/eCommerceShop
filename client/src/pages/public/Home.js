@@ -11,6 +11,7 @@ import { useSelector } from "react-redux"
 import icons from "utils/icons"
 import withBaseComponent from "hocs/withBaseComponent"
 import { createSearchParams } from "react-router-dom"
+import blog1 from 'assets/blog1.png'
 
 const { IoIosArrowForward } = icons
 const Home = ({ navigate }) => {
@@ -86,6 +87,13 @@ const Home = ({ navigate }) => {
       <div className="my-8 w-main m-auto">
         <h3 className="text-[20px] font-semibold py-[15px] border-b-2 border-main">
             BÀI ĐĂNG TRÊN BLOG
+            <div>
+              <img
+                src={blog1}
+                alt="blog1"
+                className="flex-1 object-contain"
+              />
+            </div>
         </h3>
       </div>
     </div>
