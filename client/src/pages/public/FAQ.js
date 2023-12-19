@@ -1,8 +1,12 @@
 import React from 'react'
-
+import faq from 'assets/faq.png'
 const FAQ = () => {
     return (   
-        <div>Câu hỏi thường gặp</div>
+        <div><img
+        src={faq}
+        alt="faq"
+        className="flex-1 object-contain"
+      /></div>
     )
 }
 

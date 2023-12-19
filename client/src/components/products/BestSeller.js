@@ -4,7 +4,8 @@ import { CustomSlider } from "components"
 import { getNewProducts } from "store/products/asyncActions"
 import { useDispatch, useSelector } from "react-redux"
 import clsx from "clsx"
-
+import sale1 from 'assets/sale1.png'
+import sale2 from 'assets/sale2.png'
 const tabs = [
   { id: 1, name: "SẢN PHẨM BÁN CHẠY" },
   { id: 2, name: "SẢN PHẨM MỚI" },
@@ -52,13 +53,13 @@ const BestSeller = () => {
       </div>
       <div className="w-full flex gap-4 mt-4">
         <img
-          src="https://cdn.shopify.com/s/files/1/1903/4853/files/banner2-home2_2000x_crop_center.png?v=1613166657"
-          alt="banner"
+          src={sale1}
+          alt="sale1"
           className="flex-1 object-contain"
         />
         <img
-          src="https://cdn.shopify.com/s/files/1/1903/4853/files/banner1-home2_2000x_crop_center.png?v=1613166657"
-          alt="banner"
+          src={sale2}
+          alt="sale2"
           className="flex-1 object-contain"
         />
       </div>

@@ -202,6 +202,22 @@ const Login = () => {
             setInvalidFieds={setInvalidFields}
             fullWidth
           />
+<<<<<<< HEAD
+          
+          {isRegister && 
+            <InputField
+              value={payload.confirmPassword}
+              setValue={setPayload}
+              nameKey='confirmPassword'
+              type='password'
+              invalidFields={invalidFields}
+              setInvalidFieds={setInvalidFields}
+              fullWidth
+              placeholder="Please confirm password"
+            />}
+
+=======
+>>>>>>> 2bbe481b247541515e7f0c337878e099deb7582a
 
           <Button handleOnClick={handleSubmit} fw>
             {isRegister ? "Register" : "Login"}

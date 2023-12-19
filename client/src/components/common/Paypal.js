@@ -36,7 +36,7 @@ const ButtonWrapper = ({
     if (response.success) {
       setIsSuccess(true);
       setTimeout(() => {
-        Swal.fire("Xin chúc mừng!", "Đơn hàng của bạn đã được thanh toán thành công.", "success").then(() => {
+        Swal.fire("Congrat!", "Order was created.", "success").then(() => {
           navigate("/");
         });
       }, 1500);
